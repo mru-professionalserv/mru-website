@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 
-export default function MRULandingPage() {
+export default function MRULandingPage( ) {
   const [lang, setLang] = useState("es");
 
   const t = {
