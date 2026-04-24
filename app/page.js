@@ -181,7 +181,7 @@ export default function MRULandingPage() {
               src="/logo-mru-icon-clean.png"
               alt="MRU Professional Services"
               className="h-20 sm:h-24 md:h-32 w-auto mb-10"
-              style={{ filter: "drop-shadow(0 0 6px rgba(255,255,255,0,15))" }}
+              style={{ filter: "drop-shadow(0 0 6px rgba(255,255,255,0.15))" }}
            />
          </div>
 
@@ -387,7 +387,7 @@ export default function MRULandingPage() {
     </div>
 
     {/* DERECHA: Redes */}
-    <div className="flex flex-col items-center gap-5a md:items-end md:text-right">
+    <div className="flex flex-col items-center gap-5 md:items-end md:text-right">
       {/* TEXTO redes */}
        <p className="text-sm text-slate-600 text-center md:text-right max-w-xs">
           {lang === "es"
