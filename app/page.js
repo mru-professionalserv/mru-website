@@ -1,8 +1,11 @@
 "use client";
 import React, { useState } from "react";
 
-export default function MRULandingPage() {
-  const [lang, setLang] = useState("es");
+export default function MRULandingPage(){
+  return <h1> Funciona </h1>;
+} 
+ 
+{const [lang, setLang] = useState("es");
 
   const t = {
     es: {
@@ -116,12 +119,6 @@ export default function MRULandingPage() {
       send: "Submit",
     },
   };
-
-  return (
-    <main>
-      <h1>{t[lang].brand}</h1>
-    </main>
-  );
 
 
   const content = t[lang];
