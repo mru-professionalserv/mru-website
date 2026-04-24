@@ -117,6 +117,13 @@ export default function MRULandingPage() {
     },
   };
 
+  return (
+    <main>
+      <h1>{t[lang].brand}</h1>
+    </main>
+  );
+
+
   const content = t[lang];
 
   const handleSubmit = (e) => {
@@ -386,7 +393,7 @@ export default function MRULandingPage() {
     </div>
 
     {/* DERECHA: Redes */}
-    <div className="flex flex-col items-center gap-5 md:items-end md:text-right">
+    <div className="flex flex-col items-center gap-5a md:items-end md:text-right">
       {/* TEXTO redes */}
        <p className="text-sm text-slate-600 text-center md:text-right max-w-xs">
           {lang === "es"
