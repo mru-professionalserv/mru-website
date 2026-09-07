@@ -1,8 +1,11 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { useForm } from "@formspree/react";
 
 export default function MRULandingPage( ) {
   const [lang, setLang] = useState("es");
+
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
   const t = {
     es: {
@@ -27,38 +30,41 @@ export default function MRULandingPage( ) {
           desc: "Un servicio pensado para transmitir seriedad, orden y compromiso.",
         },
       ],
-      serviciosSubtitle: "Servicios contables y contributivos adaptados a tus necesidades",
+      serviciosSubtitle: "Soluciones contables, contributivas y para negocios diseñadas para brindarte claridad, cumplimiento y confianza. Te acompaño en cada paso, desde tus impuestos hasta la estructura de tu negocio.",
       services: [
         {
-          title: "Servicios contables",
-          desc: "Apoyo contable y organización financiera para mantener tus registros en orden y facilitar la toma de decisiones.",
+          title: "Servicios de Impuestos",
+          desc: "Preparación de impuestos para individuos , trabajadores independientes y negocios. Incluye enmiendas y orientación durante el proceso.",
         },
         {
-          title: "Impuestos para individuos",
-          desc: "Preparación y radicación de planillas federales y estatales con orientación clara y profesional.",
+          title: "Contabilidad y Bookkeeping",
+          desc: "Organización contable, registro de ingresos y gastos y apoyo a mantener tus finanzas en orden durante el año.",
         },
         {
-          title: "Impuestos para trabajadores independientes ",
-          desc: "Preparación y orientación contributiva para personas que trabajan por cuenta propia, incluyendo ingresos 1099 y cumplimiento fiscal.",
+          title: "Asistencia Contributiva y Trámites con el IRS",
+          desc: "Asistencia con asuntos relacionados con el IRS: avisos/cartas, ITIN, cumplimiento trámites y orientación contributiva fuera de la preparacion normal de una declaración.",
         },
         {
-          title: "Impuestos para negocios",
-          desc: "Apoyo contributivo para negocios, incluyendo cumplimiento y preparación de obligaciones fiscales.",
+          title: "Formación y Servicios para Negocios",
+          desc: "Apoyo en la formación y organización de negocios, incluyendo LLC, corporaciones, sociedades, elección S Corp, DBA, EIN, documentación corporativa y procesos de disolución.",
         },
         {
-          title: "Enmiendas de impuestos",
-          desc: "Revisión y corrección de planillas previamente radicadas cuando sea necesario realizar ajustes.",
-        },
-        {
-          title: "Asesoría y consultoría",
-          desc: "Orientación profesional para aclarar dudas contables, contributivas y administrativas, según tu situación.",
+          title: "Asesoría y Consultoría",
+          desc: "Orientación personalizada para individuos y negocios, evaluación de tu situaciones contributivas y apoyo para tomar decisiones con mayor claridad.",
         },
       ],
-      contactTitle: "Solicita información",
+      contactTitle: "Hablemos sobre lo que necesites",
       name: "Nombre",
       email: "Correo electrónico",
       message: "Mensaje",
-      send: "Enviar solicitud",
+      send: "Enviar mensaje",
+
+      missionTitle: "Nuestra misión",
+      missionDesc: "Brindar servicios contables y contributivos con claridad, organización y profesionalismo, ayudando a individuos y pequeños negocios a cumplir con sus responsabilidades con tranquilidad y confianza.",
+
+      visionTitle: "Nuestra visión",
+      visionDesc: "Ser un recurso de confianza para individuos y pequeños negocios, ofreciendo soluciones contables y contributivas claras, confiables y enfocadas en las necesidades de cada cliente.",
+
     },
     en: {
       brand: "MRU Professional Services",
@@ -68,62 +74,57 @@ export default function MRULandingPage( ) {
         "Results you can trust. We guide you every step of the way to prepare your taxes and organize your accounting with clarity, compliance, and confidence.",
       cta1: "Talk to me",
       cta2: "View Services",
-      features: [
-        {
-          title: "Professional service",
-          desc: "Organized and client-focused process.",
-        },
-        {
-          title: "Clear communication",
-          desc: "Simple explanations so you understand your tax situation.",
-        },
-        {
-          title: "Trust-focused",
-          desc: "A service built on professionalism and reliability.",
-        },
-      ],
-      serviciosSubtitle: "Accounting and tax support tailored to your needs",
+      
+      serviciosSubtitle: "Accounting, tax, and business solutions designed to provide clarity, compliance and confidence. I guide you every step of the way, from your taxes to the orgabnization and structure of your business.",
       services: [
         {
-          title: "Accounting services",
-          desc: "Accounting support and financial organization to help keep your records in order and support business decisions.",
+          title: "Tax Services",
+          desc: "Tax preparation for individuals. self-employed workers, and businesses. Includes amendments and guidance throughout the process.",
         },
         {
-          title: "Individual tax services",
-          desc: "Preparation and filing of federal and state tax returns for individuals with clear and professional guidance.",
+          title: "Accounting & Bookkeeping",
+          desc: "Bookkeeping organization, income and expense tracking, and support to keep your finances organized throughout the year.",
         },
         { 
-          title: "Self-employed taxes",
-          desc: "Tax preparation and guidance for self-employed individuals, including 1099 income and compliance.",
+          title: "IRS Services & Tax Support",
+          desc: "Assistance with IRS-related matters, including notices and letters, ITIN guidance, compliance, filings, and tax guidance beyond standard tax return preparation.",
         },
         {
-          title: "Business taxes",
-          desc: "Tax support for businesses, including guidance on compliance and preparation of tax obligations.",
+          title: "Business Formation & Services",
+          desc: "Support with business formation and organitazion, including LLCs, corporations, partnerships, S Corp elections, DBAs, EIN applications, corporate documentation, and business dissolution.",
         },
         {
-          title: "Tax amendments",
-          desc: "Review and correction of previously filed tax returns when updates and adjustments are needed.",
-        },
-        {
-          title: "Advisory and consulting",
-          desc: "Professional guidance to help clarify tax, accounting, and administrative questions based on your situation.",
+          title: "Advisory and Consulting",
+          desc: "Personalized guidance for individuals and businesses, including tax situation reviews, and support to help you make decisions with greater clarity.",
         },
       ],
-      contactTitle: "Request information",
+      contactTitle: "Let's talk about what you need",
       name: "Name",
       email: "Email",
       message: "Message",
-      send: "Submit",
+      send: "Send Message",
+
+      missionTitle: "Our Mission",
+      missionDesc: "To provide accounting and tax services with clarity, organization, and professionalism, helping individuals and small businesses meet their responsabilities with confidence and peace of mind.",
+
+      visionTitle: "Our Vision",
+      visionDesc: "To become a trusted resource for individuals and small businesses by offering reliable, accessible, and client-focused accounting and tax solutions.",
+    
     },
   };
 
 
   const content = t[lang];
+  
+  const [state, handleSubmit] = useForm("myeynyde");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(lang === "es" ? "Formulario enviado" : "Form submitted");
-  };
+  const formRef = useRef(null);
+
+  useEffect(() => {
+    if (state.succeeded) {
+      formRef.current?.reset();
+    }
+  }, [state.succeeded]);
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
@@ -140,28 +141,201 @@ export default function MRULandingPage( ) {
                 MRU Professional Services
               </p>
               <p className="text-[11px] sm:text-xs text-slate-500 leading-tight">
-                {lang === "es" ? "Contabilidad e impuestos" : "Accounting & Tax Services"}
+                {lang === "es" ? "Contabilidad · Impuestos · Negocios" : "AAccounting · Tax · Business"}
               </p> 
             </div> 
           </div>
 
           <nav className="hidden items-center gap-6 text-sm text-slate-700 md:flex">
-            <a href="#servicios" className="hover:text-slate-900">
-              {lang === "es" ? "Servicios" : "Services"}
-            </a>
+            <div className="relative group">
+  <a
+    href="#services"
+    className="flex items-center gap-1 hover:text-slate-900"
+  >
+    {lang === "es" ? "Servicios" : "Services"}
+    <span className="text-xs">⌄</span>
+  </a>
+
+  <div className="invisible absolute left-0 top-full z-50 w-80 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
+    <div className="rounded-2xl border border-slate-200/80 bg-white p-3 shadow-2xl">
+
+      <a
+        href="/services/tax-services"
+        className="block rounded-xl px-4 py-3.5 transition hover:bg-slate-50"
+      >
+        <span className="block text-sm font-semibold text-slate-900">
+          {lang === "es" ? "Servicio de Impuestos" : "Tax Services"}
+        </span>
+      </a>
+
+      <a
+        href="/services/accounting-bookkeeping"
+        className="block rounded-xl px-4 py-3.5 transition hover:bg-slate-50"
+      >
+        <span className="block text-sm font-semibold text-slate-900">
+          {lang === "es" ? "Contabilidad y Bookkeeping" : "Accounting & Bookkeeping"}
+        </span>
+      </a>
+
+      <a
+        href="/services/irs-tax-support"
+        className="block rounded-xl px-4 py-3.5 transition hover:bg-slate-50"
+      >
+        <span className="block text-sm font-semibold text-slate-900">
+          {lang === "es"
+            ? "Asistencia Contributiva y Trámites con el IRS"
+            : "IRS Services & Tax Support"}
+        </span>
+      </a>
+      
+      <div className="my-2 border-t border-slate-100" />
+
+      <a
+        href="/services/business-formation"
+        className="block rounded-xl bg-slate-50 px-4 py-4 transition hover:bg-slate-100"
+      >
+        <div className="flex items-start justify-between gap-4">
+          </div>
+           <span className="block text-sm font-semibold text-slate-900">
+          {lang === "es"
+            ? "Formación y Servicios para Negocios"
+            : "Business Formation & Services"}
+        </span>
+
+        <span className="mt-1.5 block text-xs leading-relaxed text-slate-500">
+          {lang === "es"
+            ? "LLC, S Corp, C Corp, Sociedades, DBA, EIN y disoluciones"
+            : "LLC, S Corp, C Corp, Partnership, DBA, EIN & Dissolutions"}
+        </span>
+      
+        <span className="mt-0.5 text-slate-400">→</span>
+      </a>
+
+      <div className="my-2 border-t border-slate-100" />
+
+      <a
+        href="/services/advisory-consulting"
+        className="block rounded-xl px-4 py-3.5 transition hover:bg-slate-50"
+      >
+        <span className="block text-sm font-semibold text-slate-900">
+          {lang === "es"
+            ? "Asesoría y Consultoría"
+            : "Advisory & Consulting"}
+        </span>
+      </a>
+
+    </div>
+  </div>
+</div>
 
             <a href="#reviews" className="hover:text-slate-900">
               {lang === "es" ? "Reseñas" : "Reviews"}
             </a>
 
             <a href="#sobre-mi" className="hover:text-slate-900">
-              {lang === "es" ? "Detrás de MRU" : "Behind MRU"}
+              {lang === "es" ? "Sobre MRU" : "About MRU"}
             </a>
 
             <a href="#contacto" className="hover:text-slate-900">
               {lang === "es" ? "Contacto" : "Contact"}
             </a>
           </nav> 
+
+          <div className="relative md:hidden">
+  <button
+    onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+    className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50"
+  >
+    <span className="text-lg">☰</span>
+    {lang === "es" ? "Menú" : "Menu"}
+  </button>
+
+  {mobileServicesOpen && (
+    <div className="absolute right-0 top-full z-50 mt-3 w-64 rounded-2xl border border-slate-200 bg-white p-2.5 shadow-2xl max-h-[75vh] overflow-y-auto">
+
+      <p className="px-4 pb-2 pt-1 text-xs font-semibold uppercase tracking-wider text-slate-400">
+        {lang === "es" ? "Servicios" : "Services"}
+      </p>
+
+      <a
+        href="/services/tax-services"
+        onClick={() => setMobileServicesOpen(false)}
+        className="block rounded-xl px-4 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50"
+      >
+        {lang === "es" ? "Servicios de Impuestos" : "Tax Services"}
+      </a>
+
+      <a
+        href="/services/accounting-bookkeeping"
+        onClick={() => setMobileServicesOpen(false)}
+        className="block rounded-xl px-4 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50"
+      >
+        {lang === "es"
+          ? "Contabilidad y Bookkeeping"
+          : "Accounting & Bookkeeping"}
+      </a>
+
+      <a
+        href="/servicios/irs-tax-support"
+        onClick={() => setMobileServicesOpen(false)}
+        className="block rounded-xl px-4 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50"
+      >
+        {lang === "es"
+          ? "Asistencia Contributiva y Trámites con el IRS"
+          : "IRS Services & Tax Support"}
+      </a>
+
+      <a
+        href="/services/business-formation"
+        onClick={() => setMobileServicesOpen(false)}
+        className="block rounded-xl bg-slate-50 px-4 py-4 hover:bg-slate-100"
+      >
+        <span className="block text-sm font-semibold text-slate-900">
+          {lang === "es"
+            ? "Formación y Servicios para Negocios"
+            : "Business Formation & Services"}
+        </span>
+
+      </a>
+
+      <a
+        href="/servicios/advisory-consulting"
+        onClick={() => setMobileServicesOpen(false)}
+        className="block rounded-xl px-4 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50"
+      >
+        {lang === "es"
+          ? "Asesoría y Consultoría"
+          : "Advisory & Consulting"}
+      </a>
+
+      <div className="my-3 border-t border-slate-200" />
+
+      <a
+        href="#reviews"
+        onClick={() => setMobileServicesOpen(false)}
+        className="block rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50"
+      >
+        {lang === "es" ? "Reseñas" : "Reviews"}
+      </a>
+
+      <a
+        href="#sobre-mi"
+        onClick={() => setMobileServicesOpen(false)}
+        className="block rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50"
+      >
+        {lang === "es" ? "Sobre MRU" : "About MRU"}
+      </a>
+
+      <a
+        href="#contacto"
+        onClick={() => setMobileServicesOpen(false)}
+        className="block rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50"
+      >
+        {lang === "es" ? "Contacto" : "Contact"}
+      </a>
+    </div>
+  )}
+</div>
 
           <div className="flex items-center gap-2">
             <button onClick={()  => setLang("es")} className={`rounded-full px-3 py-1 text-xs sm:text-sm ${lang === "es" ? "bg-slate-900 text-white" : "border border-slate-300 text-slate-700"}`}>
@@ -180,16 +354,20 @@ export default function MRULandingPage( ) {
             <img
               src="/logo-mru-icon-clean.png"
               alt="MRU Professional Services"
-              className="h-20 sm:h-24 md:h-32 w-auto mb-10"
+              className="h-20 sm:h-24 md:h-32 w-auto -mb-10"
               style={{ filter: "drop-shadow(0 0 6px rgba(255,255,255,0.15))" }}
            />
          </div>
 
-         <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-center leading-tight px-4 pb-24">
+         <p className="text-center text-white/75 text-[11px] sm:text-xs font-semibold tracking-[0.30em] uppercase mb-22">
+           Professional Services
+         </p>
+
+         <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-center leading-tight px-4 pb-12">
           {content.heroTitle}
         </h1>
 
-         <p className="mt-6 md:mt-8 text-center text-sm sm:text-base md:text-lg text-slate-300 max-w-xl mx-auto leading-relaxed px-6">
+         <p className="mt-2 md:mt-3 text-center text-sm sm:text-base md:text-lg text-slate-300 max-w-xl mx-auto leading-relaxed px-6">
           {content.heroDesc}
          </p>
 
@@ -225,15 +403,8 @@ export default function MRULandingPage( ) {
              {lang === "es" ? "Escríbeme aquí" : "Contact me here"}
            </a>
          </p>
-
-        <p className="mt-4 text-xs text-slate-400 text-center tracking-wide px-4">
-          {lang === "es"
-            ? "Cumplimiento con regulaciones del IRS · Atención profesional y confidencial"
-            : "IRS compliance · Professional and confidential service"}
-        </p>
        
         </div>
- 
      </section>
 
      <section id="sobre-mi" className="scroll-mt-24 mx-auto max-w-5xl px-6 py-12">
@@ -243,7 +414,7 @@ export default function MRULandingPage( ) {
         <div className="text-center md:text-left space-y-3">
 
           <h2 className="text-3xl font-bold mb-4">
-          {lang === "es" ? "Detrás de MRU" : "Behind MRU"}
+          {lang === "es" ? "Sobre MRU" : "About MRU"}
         </h2>
 
         <div className="w-12 h-1 bg-slate-900 mb-6 mx-auto md:mx-0 rounded-full"></div>
@@ -257,7 +428,7 @@ export default function MRULandingPage( ) {
         </p>
 
         <p className="text-xs text-slate-500 mt-1">
-          MBA
+          BBA in Accounting · MBA in Finance
         </p>
 
         <div className="mt-3 inline-block px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs">
@@ -271,14 +442,14 @@ export default function MRULandingPage( ) {
 
         <p className="mb-4">
           {lang === "es"
-            ? "Profesional en contabilidad y finanzas con experiencia en la industria bancaria, cumplimiento regulatorio, preparación de impuestos y apoyo contable. Acompaño a individuos y pequeños negocios con un enfoque claro, organizado y confiable."
-            : "Accounting and finance professional with experience in banking, regulatory compliance, tax preparation, and accounting support. I assist individuals and small businesses with a clear, structured, and reliable approach."}
+            ? "Profesional en contabilidad y finanzas con experiencia en la industria bancaria, cumplimiento regulatorio, contabilidad y preparación contributiva. Acompaño a individuos y pequeños negocios con un enfoque claro, organizado y confiable, brindando orientación adaptada a sus necesidades financieras y contributivas."
+            : "Accounting and finance professional with experience in banking, regulatory compliance, accounting and tax preparation. I support individuals and small businesses with a clear, organized, and reliable approach, providing guidance tailored to their financial anf tax needs."}
         </p>
 
         <p className="mt-4">
           {lang === "es"
-            ? "MRU Professional Services fue fundada con el propósito de ofrecer un servicio confiable, cercano y enfocado en cada cliente."
-            : "MRU Professional Services was created with the purpose of providing reliable, approachable, and client-focused service."}
+            ? "MRU Professional Services nació con el propósito de ofrecer un servicio profesional, cercano y personalizado, donde cada cliente puede recibir orientación clara y contar con el apoyo necesario al tomar decisiones importantes para sus finanzas o su negocio."
+            : "MRU Professional Services  was founded to provide professional, approachable, and personalized service, where every client can receive clear guidance and the support they need when making important financial or business decisions."}
         </p>
 
       </div>
@@ -286,24 +457,119 @@ export default function MRULandingPage( ) {
     </div>
   </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-12">
-        <div className="grid md:grid-cols-3 gap-6">
-          {content.features.map((f, i) => (
-            <div key={i} className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
-              <h3 className="font-semibold">{f.title}</h3>
-              <p className="text-sm mt-2">{f.desc}</p>
-            </div>
-          ))}
+     <section className="bg-slate-900 text-white py-20 px-6">
+      <div className="max-w-6xl mx-auto text-center mb-14">
+        <h2 className="text-3xl md:text-4xl font-semibold">
+          {lang === "es" ? "¿Por qué elegir MRU?" : "Why choose MRU?"}
+        </h2>
+        <p className="text-slate-300 mt-3">
+          {lang === "es"
+            ? "Un servicio enfocado en confianza, claridad y resultados"
+            : "A service focused on trust, clarity, and results"}
+        </p>
+      </div>
+
+      <div className="max-w-6xl  mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          {
+            title: lang === "es" ? "Atención personalizada" : "Personalized attention",
+            desc: lang === "es"
+              ? "Cada caso es único. Recibes orientación adaptada a tu situación."
+              : "Every case is unique. You receive guidance tailored to your situation.",
+          },
+          {
+            title: lang === "es"  ? "Comunicación clara" : "Clear communication",
+            desc: lang === "es" 
+              ? "Explicaciones sencillas para que entiendas cada paso."
+              : "Simple explanations so you understand every step.",
+          },
+          {
+            title: lang === "es" ? "Cumplimiento y precisión" : "Compliance & Accuracy",
+            desc: lang === "es"
+              ? "Procesos organizados y cuidadosos, con efoque en cumplimiento y precisión."
+              : "Organized and careful processes, with a focus on compliance and accuracy.",
+          },
+          {
+            title: lang === "es" ? "Confidencialidad" : "Confidentiality",
+            desc: lang === "es" 
+              ? "Tu información es manejada con confidencialidad, discreción y profesionalismo."
+              : "Your information is handled with confidentiality, discretion and professionalism.",
+          },
+        ]. map((item, index) => (
+          <div
+            key={item.title}
+            className={`rounded-2xl border border-white/10 bg-white/5 p-6 shadow-sm backdrop-blur transition hover:-translate-y-1 hover:bg-white/10 ${
+              index % 2 === 1 ? "md:mt-8" : ""
+            }`}
+          >
+            <h3 className="text-lg font-semibold mb-3">{item.title}</h3>
+            <p className="text-sm text-slate-300 leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+     </section>
+
+     <section className="bg-white py-20 px-6">
+      <div className="max-w-6xl mx-auto text-center mb-12">
+        <h2 className="text-3xl md:text-4xl font-semibold text-slate-900">
+          {lang === "es" ? "Nuestra esencia" : "Our foundation"}
+        </h2>
+        <p className="text-slate-500 mt-2">
+          {lang === "es"
+            ? "Lo que guía nuestro trabajo y compromiso contigo"
+            : "What guides our work and commitment to you"}
+        </p>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-8">
+
+        {/* MISION */}
+        <div className="bg-slate-50 p-8 rounded-2xl shadow-sm hover:shadow-md transition">
+          <h3 className="text-lg font-semibold text-slate-900 mb-4">
+          {content.missionTitle}
+        </h3>
+        <p className="text-slate-600 leading-relaxed">
+          {content.missionDesc}
+        </p>
+      </div>
+        {/* VISION */}
+        <div className="bg-slate-50 p-8 rounded-2xl shadow-sm hover:shadow-md transition">
+          <h3 className="text-lg font-semibold text-slate-900 mb-4">
+            {content.visionTitle}
+          </h3>
+          <p className="text-slate-600 leading-relaxed">
+            {content.visionDesc}
+          </p>
         </div>
-      </section>
+
+      </div>
+     </section>
 
       <section id="servicios" className="mx-auto max-w-6xl px-6 py-16 md:py-20">
         <h2 className="text-2xl font-bold mb-4">{content.serviciosSubtitle}</h2>
         <div className="grid md:grid-cols-2 gap-6 mt-8">
           {content.services.map((s, i) => (
-            <div key={i} className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
-              <h3 className="font-semibold">{s.title}</h3>
+            <div key={i} className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 transition duration-300 hover-translate-y-1 hover:shadow-lg">
+              <h3 className="font-semibold text-lg text-slate-900">{s.title}</h3>
               <p className="text-sm mt-2">{s.desc}</p>
+
+              <a
+                 href={
+               i === 0
+               ? "/services/tax-services"
+               : i === 1
+               ? "/services/accounting-bookkeeping"
+               : i === 2
+               ? "/services/irs-tax-support"
+               : i === 3
+               ? "/services/business-formation"
+               : "/services/advisory-consulting"
+            }
+  className="inline-flex items-center mt-5 font-semibold text-slate-900 hover:gap-2 transition-all"
+>
+  {lang === "es" ? "Conoce más" : "Learn More"} →
+</a>
+
             </div>
           ))}
         </div>
@@ -312,19 +578,59 @@ export default function MRULandingPage( ) {
       <section id="contacto" className="mx-auto max-w-4xl px-6 py-16 text-center">
         <div className="text-sm text-slate-500 mb-2">
           {lang === "es"
-            ? "Ubicación: Tampa, Florida. Servicios disponibles para clientes en Estados Unidos y Puerto Rico."
-            : "Location: Tampa, Florida. Services available to clients across the United States and Puerto Rico."}
+            ? "Tampa, Florida. Servicios disponibles en Estados Unidos y Puerto Rico."
+            : "Tampa, Florida. Serving clients across the United States and Puerto Rico."}
         </div>
-        <h2 className="text-2xl font-semibold text-slate-900 mb-8">{content.contactTitle}</h2>
+        <h2 className="text-2xl font-semibold text-slate-900 mb-2">{content.contactTitle}</h2>
+        <p className="mt-2 mb-6 text-sm text-slate-500 text-center">
+          {lang === "es"
+            ? "Cuéntame brevemente cómo puedo ayudarte."
+            : "Tell me briefly how I can help."}
+        </p>
         <div className="mt-6 flex justify-center">
           <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 mx-auto max-w-md">
-            <form className="space-y-4" onSubmit={handleSubmit}>
-              <input required placeholder={content.name} className="w-full border p-2 rounded" />
-              <input required type="email" placeholder={content.email} className="w-full border p-2 rounded" />
-              <textarea required placeholder={content.message} className="w-full border p-2 rounded" />
-              <button type="submit" className="bg-slate-900 text-white px-4 py-2 rounded">
-                {content.send}
+            <form ref={formRef} className="space-y-4" onSubmit={handleSubmit}>
+              <input 
+                required 
+                name="name"
+                placeholder={content.name} 
+                className="w-full border p-2 rounded" 
+              />
+
+              <input 
+                required 
+                type="email" 
+                name="email"
+                placeholder={content.email} 
+                className="w-full border p-2 rounded" 
+              />
+
+              <textarea 
+                required 
+                name="message"
+                placeholder={content.message} 
+                className="w-full border p-2 rounded" 
+              />
+
+              <button 
+                type="submit" 
+                disabled={state.submitting}
+                className="bg-slate-900 text-white px-4 py-2 rounded disabled:opacity-50"
+              >
+                {state.submitting
+                  ? lang === "es"
+                    ? "Enviando..."
+                    : "Sending..."
+                  :content.send}
               </button>
+                
+              {state.succeeded && (
+                <p className="text-sm text-green-700">
+                  {lang === "es"
+                    ? "¡Gracias! Tu mensaje fue enviado correctamente."
+                    : "Thank you! Your message was sent successfully."}
+                </p>
+              )}
             </form>
           </div>
         </div>
@@ -339,8 +645,8 @@ export default function MRULandingPage( ) {
 
         <p className="text-slate-700 text-lg font-medium">
           {lang === "es"
-            ? "Tu opinión es muy importante para nosotros."
-            : "Your feedback is very important to us."}
+            ? "Tu opinión es muy importante para nosotros. Comparte tu experiencia y ayúdanos a seguir mejorando."
+            : "Your feedback is very important to us. Share your experience and help us continue improving."}
         </p>
 
         <p className="mt-2 text-slate-500">
@@ -380,7 +686,9 @@ export default function MRULandingPage( ) {
           MRU Professional Services
         </p>
         <p>
-          Tampa, Florida · Puerto Rico & United States
+          {lang === "es"
+            ? "Tampa, Florida · Estados Unidos · Puerto Rico"
+            : "Tampa, Florida · United States · Puerto Rico"}
         </p>
   
       </div>
@@ -465,7 +773,9 @@ export default function MRULandingPage( ) {
      >
        <path d="M16 .6C7.5.6.6 7.5.6 16c0 2.8.7 5.5 2.1 7.9L.5 31.5l7.8-2.1c2.3 1.3 4.9 2 7.7 2h.1c8.5 0 15.4-6.9 15.4-15.4S24.5.6 16 .6zm0 28.1c-2.4 0-4.7-.7-6.6-1.9l-.5-.3-4.6 1.2 1.2-4.5-.3-.5C3.9 20.7 3.2 18.4 3.2 16 3.2 9.4 9.4 3.2 16 3.2S28.8 9.4 28.8 16 22.6 28.7 16 28.7zm6.9-9.8c-.4-.2-2.2-1.1-2.6-1.2-.4-.2-.6-.2-.9.2s-1 1.2-1.2 1.4-.4.3-.8.1c-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.3-2.1-2.7-.2-.4 0-.6.2-.8.2-.2.4-.4.6-.6.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6s-.9-2.2-1.3-3c-.4-.9-.8-.8-1.1-.8h-.9c-.3 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.1 3.2 1.3 3.4c.2.2 2.2 3.4 5.4 4.8.8.3 1.4.5 1.9.6.8.3 1.5.2 2 .1.6-.1 2.2-.9 2.5-1.8.3-.9.3-1.7.2-1.8-.1-.1-.3-.2-.7-.4z"/>
      </svg>
+     <span className="hidden md:inline">
        {lang === "es" ? "Escríbeme" : "Message me"}
+     </span> 
      </a>
 
     </div> 
