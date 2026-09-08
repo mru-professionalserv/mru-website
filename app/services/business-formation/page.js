@@ -273,7 +273,7 @@ export default function BusinessFormationPage() {
       question: "¿Necesitas un EIN para tu negocio?",
     },
 
-    "Business Dissolution": {
+    "Disolución de Negocios": {
       title: "Disolución de Negocios",
       description:
         "La disolución es el proceso formal de cerrar una entidad empresarial y atender los requisitos estatales, contributivos y administrativos aplicables.",
