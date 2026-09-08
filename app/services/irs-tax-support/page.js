@@ -19,12 +19,12 @@ export default function IRSTaxSupportPage() {
           desc: "Support with reviewing IRS notices and letters, understanding what they mean, identifying required next steps, and organizing the information needed to respond.",
         },
         {
-          title: "ITIN Applications",
-          desc: "Assistance with Individual Taxpayer Identification Number applications and related documentation requirements.",
+          title: "ITIN Guidance & W-7 Preparation",
+          desc: "Guidance on ITIN requirements and assistance preparing Form W-7 and the documentation needed for submission.",
         },
         {
           title: "Tax Compliance Support",
-          desc: "Guidance with tax filing obligations, required documentation, deadlines, and general compliance matters based on your situation.",
+          desc: "Guidance on tax filing obligations, required documentation, deadlines, and other compliance requirements based on your situation.",
         },
         {
           title: "Prior-Year Tax Matters",
@@ -32,7 +32,7 @@ export default function IRSTaxSupportPage() {
         },
         {
           title: "IRS Account & Document Assistance",
-          desc: "Help reviewing tax records, transcripts, notices, and other IRS-related documents to better understand your tax situation.",
+          desc: "Assistance reviewing tax records, transcripts, notices, and other IRS-related documents to better understand your tax situation.",
         },
         {
           title: "General Tax Support",
@@ -54,7 +54,7 @@ export default function IRSTaxSupportPage() {
     es: {
       title: "Asistencia Contributiva y Trámites con el IRS",
       intro:
-        "Apoyo personalizado para asuntos relacionados con el IRS, cumplimiento contributivo, avisos, solicitudes y otras situaciones fuera de la preparación normal de una planilla.",
+        "Apoyo personalizado para asuntos relacionados con el IRS, cumplimiento contributivo, avisos, solicitudes y otras situaciones fuera de la preparación regular de una planilla.",
       badges: ["Orientación", "Cumplimiento", "Apoyo"],
 
       services: [
@@ -64,7 +64,7 @@ export default function IRSTaxSupportPage() {
         },
         {
           title: "Solicitudes de ITIN",
-          desc: "Asistencia con solicitudes de Número de Identificación Personal del Contribuyente y los requisitos de documentación relacionados.",
+          desc: "Orientación sobre los requisitos del ITIN y asistencia en la preparación del Formulario W-7 y la documentación necesaria para su presentación.",
         },
         {
           title: "Apoyo en Cumplimiento Contributivo",
@@ -76,11 +76,11 @@ export default function IRSTaxSupportPage() {
         },
         {
           title: "Asistencia con Documentos y Registros del IRS",
-          desc: "Apoyo para revisar registros contributivos, transcripciones, avisos y otros documentos relacionados con el IRS para comprender mejor tu situación.",
+          desc: "Apoyo para revisar registros contributivos, transcripciones, avisos y otros documentos relacionados con el IRS para comprender mejor tu situación contributiva.",
         },
         {
           title: "Orientación Contributiva General",
-          desc: "Orientación personalizada para preguntas y situaciones contributivas que estén fuera de la preparación normal de una planilla.",
+          desc: "Orientación personalizada para preguntas y situaciones contributivas que estén fuera de la preparación regular de una planilla.",
         },
       ],
 
@@ -103,12 +103,24 @@ export default function IRSTaxSupportPage() {
       <header className="bg-slate-950 text-white">
         <div className="mx-auto max-w-6xl px-6 py-6">
           <div className="flex items-center justify-between gap-4">
-            <Link href="/">
+            <Link href="/" className="flex items-center gap-3">
               <img
-                src="/logo-mru-full-clean.png"
-                alt="MRU Professional Services"
-                className="h-28 w-auto scale-125 origin-left"
+                src="/logo-mru-icon-clean.png"
+                alt="MRU"
+                className="h-16 w-auto"
               />
+
+              <div className="leading-tight">
+                <p className="text-sm font-semibold tracking-wide text-white">
+                    MRU Professional Services
+                </p>
+
+                <p className="mt-1 text-xs text-slate-300">
+                    {lang === "es"
+                      ? "Contabilidad · Impuestos · Negocio"
+                      : "Accounting · Tax · Business"}
+                </p>
+              </div>
             </Link>
 
             <button

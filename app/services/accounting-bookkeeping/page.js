@@ -10,7 +10,7 @@ export default function AccountingBookkeepingPage() {
     en: {
       title: "Accounting & Bookkeeping",
       intro:
-        "Clear, organized financial records to help you understand your business and make more informed decisions.",
+        "Keep your business finances organized and up to date, with clear information to better understand your financial position.",
       badges: ["Organize", "Track", "Understand"],
 
       services: [
@@ -20,7 +20,7 @@ export default function AccountingBookkeepingPage() {
         },
         {
           title: "Income & Expense Tracking",
-          desc: "Organization and categorization of business income and expenses to provide a clearer view of your financial activity.",
+          desc: "Organization and categorization of business income and expenses to provide a clearer view of your finances.",
         },
         {
           title: "Bank & Account Reconciliations",
@@ -28,7 +28,7 @@ export default function AccountingBookkeepingPage() {
         },
         {
           title: "Financial Reports",
-          desc: "Preparation and review of financial reports to help you better understand business performance and financial activity.",
+          desc: "Preparation and review of financial reports to help you better understand business performance and financial position.",
         },
         {
           title: "Financial Organization & Cleanup",
@@ -50,7 +50,7 @@ export default function AccountingBookkeepingPage() {
     es: {
       title: "Contabilidad y Bookkeeping",
       intro:
-        "Registros financieros claros y organizados para ayudarte a comprender mejor tu negocio y tomar decisiones más informadas.",
+        "Mantén las finanzas de tu negocio organizadas, actualizadas y claras para que tengas una visión precisa de tu situación financiera.",
       badges: ["Organiza", "Controla", "Comprende"],
 
       services: [
@@ -60,7 +60,7 @@ export default function AccountingBookkeepingPage() {
         },
         {
           title: "Registro de Ingresos y Gastos",
-          desc: "Organización y categorización de los ingresos y gastos del negocio para tener una visión más clara de su actividad financiera.",
+          desc: "Organización y categorización de los ingresos y gastos del negocio para tener una visión más clara de tus finanzas.",
         },
         {
           title: "Conciliaciones Bancarias y de Cuentas",
@@ -68,7 +68,7 @@ export default function AccountingBookkeepingPage() {
         },
         {
           title: "Reportes Financieros",
-          desc: "Preparación y revisión de reportes financieros para ayudarte a comprender mejor el desempeño y la actividad financiera de tu negocio.",
+          desc: "Preparación y revisión de reportes financieros para ayudarte a comprender mejor el desempeño y la situación financiera de tu negocio.",
         },
         {
           title: "Organización y Limpieza Contable",
@@ -96,12 +96,24 @@ export default function AccountingBookkeepingPage() {
         <div className="mx-auto max-w-6xl px-6 py-6">
 
           <div className="flex items-center justify-between gap-4">
-            <Link href="/">
+            <Link href="/" className="flex items-center gap-3">
               <img
-                src="/logo-mru-full-clean.png"
-                alt="MRU Professional Services"
-                className="h-28 w-auto scale-125 origin-left"
+                src="/logo-mru-icon-clean.png"
+                alt="MRU"
+                className="h-16 w-auto"
               />
+
+              <div className="leading-tight">
+                <p className="text-sm font-semibold tracking-wide text-white">
+                    MRU Professional Services
+                </p>
+
+                <p className="mt-1 text-xs text-slate-300">
+                    {lang === "es"
+                      ? "Contabilidad · Impuestos · Negocio"
+                      : "Accounting · Tax · Business"}
+                </p>
+              </div>
             </Link>
 
             <button

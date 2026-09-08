@@ -16,15 +16,15 @@ export default function TaxServicesPage() {
       services: [
         {
           title: "Individual Tax Returns",
-          desc: "Preparation of federal and applicable state individual income tax returns with attention to accuracy, credits, deductions, and filing requirements.",
+          desc: "Preparation of federal and applicable state individual income tax returns with attention to accuracy, elegible credits, deductions, and filing requirements.",
         },
         {
           title: "Self-Employed & 1099",
-          desc: "Tax preparation for independent contractors, gig workers, and self-employed individuals, including Schedule C income and deductible business expenses.",
+          desc: "Tax preparation for independent contractors, gig workers, and self-employed individuals, including Schedule C income and elegible business expenses.",
         },
         {
           title: "Business Tax Returns",
-          desc: "Tax preparation support for eligible business entities, including partnerships and corporations, based on the business structure and filing requirements.",
+          desc: "Tax preparation for eligible business entities, including partnerships and corporations, based on the entity structure and filing requirements.",
         },
         {
           title: "Tax Amendments",
@@ -32,11 +32,11 @@ export default function TaxServicesPage() {
         },
         {
           title: "Federal & State Filings",
-          desc: "Support with federal income tax filings and applicable state tax returns based on your tax situation.",
+          desc: "Federal income tax filings and applicable state returns preparations based on your individual tax situation.",
         },
         {
           title: "Puerto Rico Tax Services",
-          desc: "Tax preparation and filing support for applicable Puerto Rico individual and business tax matters.",
+          desc: "Preparation and filing of applicable Puerto Rico individual and business tax returns.",
         },
       ],
 
@@ -56,7 +56,7 @@ export default function TaxServicesPage() {
       services: [
         {
           title: "Planillas Individuales",
-          desc: "Preparación de declaraciones federales y estatales aplicables, considerando créditos, deducciones, requisitos de radicación y la situación contributiva del cliente.",
+          desc: "Preparación de declaraciones federales y estatales aplicables, considerando créditos y deducciones elegibles, requisitos de radicación y la situación contributiva del cliente.",
         },
         {
           title: "Trabajadores por Cuenta Propia y 1099",
@@ -64,7 +64,7 @@ export default function TaxServicesPage() {
         },
         {
           title: "Planillas de Negocios",
-          desc: "Apoyo en la preparación contributiva de entidades de negocio elegibles, incluyendo sociedades y corporaciones, según su estructura y requisitos de radicación.",
+          desc: "Preparación contributiva para entidades de negocio elegibles, incluyendo sociedades y corporaciones, según su estructura y los requisitos de radicación aplicables.",
         },
         {
           title: "Enmiendas Contributivas",
@@ -72,11 +72,11 @@ export default function TaxServicesPage() {
         },
         {
           title: "Radicaciones Federales y Estatales",
-          desc: "Apoyo con declaraciones federales y estatales aplicables de acuerdo con la situación contributiva del cliente.",
+          desc: "Preparación y radicación de declaraciones federales y estatales aplicables de acuerdo con la situación contributiva del cliente.",
         },
         {
           title: "Servicios Contributivos de Puerto Rico",
-          desc: "Preparación y apoyo en asuntos contributivos aplicables para individuos y negocios en Puerto Rico.",
+          desc: "Preparación y radicación de planillas aplicables para individuos y negocios en Puerto Rico.",
         },
       ],
 
@@ -95,12 +95,24 @@ export default function TaxServicesPage() {
       <header className="bg-slate-950 text-white">
         <div className="mx-auto max-w-6xl px-6 py-6">
           <div className="flex items-center justify-between gap-4">
-            <Link href="/">
+            <Link href="/" className="flex items-center gap-3">
               <img
-                src="/logo-mru-full-clean.png"
-                alt="MRU Professional Services"
-                className="h-28 w-auto scale-125 origin-left"
+                src="/logo-mru-icon-clean.png"
+                alt="MRU"
+                className="h-16 w-auto"
               />
+
+              <div className="leading-tight">
+                <p className="text-sm font-semibold tracking-wide text-white">
+                    MRU Professional Services
+                </p>
+
+                <p className="mt-1 text-xs text-slate-300">
+                    {lang === "es"
+                      ? "Contabilidad · Impuestos · Negocio"
+                      : "Accounting · Tax · Business"}
+                </p>
+              </div>
             </Link>
 
             <button

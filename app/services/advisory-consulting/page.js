@@ -10,30 +10,30 @@ export default function AdvisoryConsultingPage() {
     en: {
       title: "Advisory & Consulting",
       intro:
-        "Personalized guidance to help individuals and small businesses make more informed tax, financial, and business decisions throughout the year.",
+        "Personalized guidance for individuals and small businesses to plan ahead, evaluate their options, and make informed tax, financial, and business decisions throughout the year.",
 
       badges: ["Plan", "Evaluate", "Decide"],
 
       services: [
         {
           title: "Tax Planning",
-          desc: "Year-round guidance to help you better understand potential tax obligations, estimated payments, and planning opportunities before tax season.",
+          desc: "Year-round guidance to help you understand potential tax obligations, plan for estimated payments, and identify opportunities before tax season.",
         },
         {
           title: "Business Guidance",
-          desc: "Personalized support for business owners evaluating financial, tax, and operational decisions that may affect their business.",
+          desc: "Personalized guidance for business owners evaluating financial, tax, and operational decisions that may affect their business.",
         },
         {
           title: "Self-Employed Consultations",
-          desc: "Guidance for independent contractors and self-employed individuals on tax responsibilities, business organization, expenses, and recordkeeping.",
+          desc: "Guidance for independent contractors and self-employed individuals on tax responsibilities, estimated payments, business expenses, and recordkeeping.",
         },
         {
           title: "Tax Situation Review",
-          desc: "A personalized review of your current tax situation to identify questions, potential concerns, and areas that may require additional planning.",
+          desc: "A personalized review of your current tax situation to identify potential concerns, planning opportunities, and areas that may require additional attention.",
         },
         {
           title: "Financial Organization Guidance",
-          desc: "Support with improving the way you organize financial information, records, and documents so you can make decisions with greater clarity.",
+          desc: "Support with improving how you organize financial information, records, and documents so you can make decisions with greater clarity.",
         },
         {
           title: "Personalized Consultation",
@@ -47,7 +47,7 @@ export default function AdvisoryConsultingPage() {
 
       ctaTitle: "Have a question or important decision to make?",
       ctaText:
-        "MRU Professional Services provides personalized consultations designed to help you understand your options and determine the next steps with greater clarity.",
+        "MRU Professional Services provides personalized consultations to help you understand your options, address your questions, and determine the next steps with greater clarity.",
 
       ctaButton: "Schedule a Consultation",
       back: "Back to Home",
@@ -56,44 +56,44 @@ export default function AdvisoryConsultingPage() {
     es: {
       title: "Asesoría y Consultoría",
       intro:
-        "Orientación personalizada para ayudar a individuos y pequeños negocios a planificar, evaluar sus opciones y tomar decisiones con mayor claridad durante todo el año.",
+        "Orientación personalizada para ayudar a individuos y pequeños negocios a planificar, evaluar sus opciones y tomar decisiones contributivas, financieras y de negocio con mayor claridad durante todo el año.",
 
       badges: ["Planifica", "Evalúa", "Decide"],
 
       services: [
         {
           title: "Planificación Contributiva",
-          desc: "Orientación durante el año para ayudarte a comprender posibles obligaciones contributivas, pagos estimados y oportunidades de planificación antes de la temporada de impuestos.",
+          desc: "Orientación durante todo el año para ayudarte a comprender posibles obligaciones contributivas, planificar pagos estimados e identificar oportunidades antes de la temporada de impuestos.",
         },
         {
           title: "Orientación para Negocios",
-          desc: "Apoyo personalizado para dueños de negocios que necesitan evaluar decisiones financieras, contributivas u operacionales que puedan impactar su negocio.",
+          desc: "Orientación personalizada para dueños de negocios que necesitan evaluar decisiones financieras, contributivas y operacionales que puedan impactar su negocio.",
         },
         {
           title: "Consultas para Trabajadores por Cuenta Propia",
-          desc: "Orientación para contratistas independientes y personas por cuenta propia sobre responsabilidades contributivas, organización del negocio, gastos y mantenimiento de registros.",
+          desc: "Orientación para contratistas independientes y trabajadores por cuenta propia sobre responsabilidades contributivas, pagos estimados, gastos del negocio y mantenimiento de registros.",
         },
         {
           title: "Revisión de Situación Contributiva",
-          desc: "Revisión personalizada de tu situación contributiva actual para identificar preguntas, posibles asuntos y áreas que puedan requerir planificación adicional.",
+          desc: "Revisión personalizada de tu situación contributiva actual para identificar posibles asuntos, oportunidades de planificación y áreas que puedan requerir atención adicional.",
         },
         {
           title: "Orientación para Organización Financiera",
-          desc: "Apoyo para mejorar la organización de tu información, registros y documentos financieros y ayudarte a tomar decisiones con mayor claridad.",
+          desc: "Apoyo para mejorar la organización de tu información financiera, registros y documentos financieros, ayudándote a tomar decisiones con mayor claridad.",
         },
         {
           title: "Consulta Personalizada",
-          desc: "Orientación individual para preguntas específicas de impuestos, contabilidad o negocios, de acuerdo con tu situación y tus objetivos.",
+          desc: "Orientación individual para preguntas específicas sobre impuestos, contabilidad o negocios, de acuerdo con tu situación y tus objetivos.",
         },
       ],
 
-      highlightTitle: "La planificación no debe comenzar en tax season.",
+      highlightTitle: "La planificación no debe comenzar en temporada de impuestos.",
       highlightText:
         "Recibir orientación durante el año puede ayudarte a identificar responsabilidades con tiempo, mantenerte organizado y tomar decisiones con mayor confianza.",
 
       ctaTitle: "¿Tienes una pregunta o una decisión importante que tomar?",
       ctaText:
-        "MRU Professional Services ofrece consultas personalizadas para ayudarte a comprender tus opciones y determinar los próximos pasos con mayor claridad.",
+        "MRU Professional Services ofrece consultas personalizadas para ayudarte a comprender tus opciones, atender tus preguntas y determinar los próximos pasos con mayor claridad.",
 
       ctaButton: "Solicitar una Consulta",
       back: "Volver al Inicio",
@@ -107,12 +107,24 @@ export default function AdvisoryConsultingPage() {
       <header className="bg-slate-950 text-white">
         <div className="mx-auto max-w-6xl px-6 py-6">
           <div className="flex items-center justify-between gap-4">
-            <Link href="/">
+            <Link href="/" className="flex items-center gap-3">
               <img
-                src="/logo-mru-full-clean.png"
-                alt="MRU Professional Services"
-                className="h-28 w-auto scale-125 origin-left"
+                src="/logo-mru-icon-clean.png"
+                alt="MRU"
+                className="h-16 w-auto"
               />
+
+              <div className="leading-tight">
+                <p className="text-sm font-semibold tracking-wide text-white">
+                    MRU Professional Services
+                </p>
+
+                <p className="mt-1 text-xs text-slate-300">
+                    {lang === "es"
+                      ? "Contabilidad · Impuestos · Negocio"
+                      : "Accounting · Tax · Business"}
+                </p>
+              </div>
             </Link>
 
             <button

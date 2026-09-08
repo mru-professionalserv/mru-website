@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 export default function BusinessFormationPage() {
   const [lang, setLang] = useState("en");
@@ -13,43 +14,43 @@ export default function BusinessFormationPage() {
         title: "LLC",
         subtitle: "Limited Liability Company",
         description:
-          "A flexible business structure commonly used by small business owners and entrepreneurs.",
+          "A flexible business structure thats offers liability protection and options for management and tax treatment.",
       },
       {
         title: "S Corporation",
         subtitle: "S Corporation Tax Election",
         description:
-          "Learn how an eligible business may elect S Corporation tax treatment and what that can mean for the business.",
+          "Explore how eligible business may elect S Corporation tax treatment and the requirements that may apply.",
       },
       {
         title: "C Corporation",
         subtitle: "Corporation",
         description:
-          "A separate corporate entity with its own structure, ownership through shares, and tax considerations.",
+          "A separate corporate entity with its own ownership structure, corporate requirements, and tax considerations.",
       },
       {
         title: "Partnership",
         subtitle: "Business with Multiple Owners",
         description:
-          "Understand the basics of operating a business with two or more owners and the related filing considerations.",
+          "A business arrangement involving two or more owners, with important ownership, filings, and tax considerations.",
       },
       {
         title: "DBA",
         subtitle: "Doing Business As",
         description:
-          "Learn what a DBA or fictitious business name is and how it differs from forming a separate business entity.",
+          "Register a business name different from your legal name without creating a separate business entity.",
       },
       {
         title: "EIN",
         subtitle: "Employer Identification Number",
         description:
-          "Learn what an EIN is, when a business may need one, and how MRU can assist with the application process.",
+          "Obtain a federal tax identification number for your business with guidance through the application process.",
       },
       {
         title: "Business Dissolution",
         subtitle: "Closing a Business",
         description:
-          "Guidance with the administrative steps involved in formally closing a business entity.",
+          "Formally close a business while addressing applicable state, tax, and administrative requirements.",
       },
     ],
 
@@ -58,43 +59,43 @@ export default function BusinessFormationPage() {
         title: "LLC",
         subtitle: "Compañía de Responsabilidad Limitada",
         description:
-          "Una estructura empresarial flexible utilizada comúnmente por pequeños negocios y emprendedores.",
+          "Una estructura de negocio flexible que ofrece protección de responsabilidad y opciones de administración y tratamiento contributivo.",
       },
       {
         title: "S Corporation",
         subtitle: "Elección contributiva S Corporation",
         description:
-          "Conoce cómo ciertos negocios elegibles pueden solicitar tratamiento contributivo como S Corporation y qué puede significar para el negocio.",
+          "Conoce cómo los negocios elegibles pueden optar tratamiento contributivo S Corporation y los requisitos que pueden aplicar.",
       },
       {
         title: "C Corporation",
         subtitle: "Corporación",
         description:
-          "Una entidad corporativa separada con su propia estructura, propiedad mediante acciones y consideraciones contributivas.",
+          "Una entidad legal separada con su propia estructura de propiedad, requisitos corporativos y consideraciones contributivas.",
       },
       {
         title: "Partnership",
         subtitle: "Negocio con múltiples propietarios",
         description:
-          "Conoce los conceptos básicos de operar un negocio con dos o más propietarios y algunas de sus consideraciones contributivas.",
+          "Una estructura de negocio con dos o más propietarios que conlleva consideraciones de participación, radicación y obligaciones contributivas.",
       },
       {
         title: "DBA",
         subtitle: "Doing Business As",
         description:
-          "Conoce qué es un DBA o nombre comercial ficticio y cómo se diferencia de crear una entidad empresarial separada.",
+          "Registra un nombre comercial diferente al nombre legal sin crear una entidad de negocio separada.",
       },
       {
         title: "EIN",
         subtitle: "Employer Identification Number",
         description:
-          "Conoce qué es un EIN, cuándo un negocio puede necesitarlo y cómo MRU puede asistir con el proceso de solicitud.",
+          "Obtén un número de identificación contributiva federal para tu negocio con orientación durante el proceso de solicitud.",
       },
       {
         title: "Disolución de Negocios",
         subtitle: "Cierre de una empresa",
         description:
-          "Orientación con los pasos administrativos relacionados con el cierre formal de una entidad empresarial.",
+          "Cierra formalmente un negocio atendiendo los requisitos estatales, contributivos y administrativos aplicables.",
       },
     ],
   };
@@ -104,92 +105,92 @@ export default function BusinessFormationPage() {
     LLC: {
       title: "LLC",
       description:
-        "An LLC, or Limited Liability Company, is a common business structure that combines operational flexibility with legal separation between the business and its owners.",
+        "An LLC, or Limited Liability Company, is a flexible business structure that provides legal separation between the business and its owners whilevoffering flexibility in manegement and tax treatment.",
       considerations: [
         "Number of owners or members.",
         "How you want the business to be managed.",
         "Registration and compliance requirements.",
         "Applicable tax treatment.",
       ],
-      question: "Have questions about an LLC?",
+      question: "Have questions about an LLC? MRU can guide you throgh the formation process and next steps.",
     },
 
-    "S Corporation Election": {
+    "S Corporation": {
       title: "S Corporation Election",
       description:
-        "Federal tax election available to certain eligible businesses. It is not a separate business entity formed in the same way as an LLC or corporation.",
+        "An S Corporation is a federal tax election available to certain eligible businesses. It is not a separate business entity formed in the same way as an LLC or corporation.",
       considerations: [
         "The business must meet IRS eligibility requirements.",
-        "An S Corporation election affects federal tax treatment.",
+        "The election affects how business income is treated for federal tax purposes.",
         "Payroll and reasonable compensation requirements may apply.",
-        "Filing deadlines and ongoing compliance should be considered.",
+        "Filing deadlines and ongoing compliance requirements should be considered.",
       ],
-      question: "Have questions about an S Corporation election?",
+      question: "Considering an S Corporation election? MRU can help you understand the requirements, process, and next steps",
     },
 
     "C Corporation": {
       title: "C Corporation",
       description:
-        "A C Corporation is a separate legal entity owned by shareholders. The corporation generally files its own tax return and pays tax at the corporate level.",
+        "A C Corporation is a separate legal entity owned by shareholders. The corporation generally files its own tax return and is subject to taxation at the corporate level.",
       considerations: [
         "Ownership through shareholders and shares.",
         "Corporate governance and recordkeeping requirements.",
-        "Separate corporate tax filing.",
-        "Business goals, growth, and ownership structure.",
+        "Separate corporate tax filing requirements.",
+        "Business goals, growth plans, and ownership structure.",
       ],
-      question: "Have questions about a C Corporation?",
+      question: "Considering a C Corporation? MRU can help you understand the formation requirements and next steps.",
     },
 
     Partnership: {
       title: "Partnership",
       description:
-        "A partnership generally involves two or more people or entities operating a business together and sharing its profits and losses.",
+        "A partnership generally involves two or more people or entities operating a business together and sharing its profits, losses, responsabilities, and tax obligations.",
       considerations: [
         "Ownership percentages and responsibilities.",
         "How profits and losses will be allocated.",
         "Partnership tax filing requirements.",
-        "A clear agreement between the partners.",
+        "The importance of a clear agreement between the partners.",
       ],
-      question: "Have questions about a Partnership?",
+      question: "Starting or organizing a Partnership? MRU can guide you through the business and tax considerations and next steps.",
     },
 
     DBA: {
       title: "DBA",
       description:
-        "A DBA, or Doing Business As, allows a business or individual to operate under a name different from its legal name. A DBA by itself does not create a separate legal entity.",
+        "A DBA, or Doing Business As, allows a business or individual to operate under a name different from its legal name. A DBA by itself does not create a separate legal business entity.",
       considerations: [
         "Availability of the business name.",
         "State or local registration requirements.",
         "The underlying legal structure of the business.",
         "A DBA does not replace an LLC or corporation.",
       ],
-      question: "Have questions about a DBA?",
+      question: "Need help with a DBA? MRU can assist with the registration process and next steps.",
     },
 
     EIN: {
       title: "EIN",
       description:
-        "An Employer Identification Number, or EIN, is a federal tax identification number issued by the IRS to identify a business for tax and other business purposes.",
+        "An Employer Identification Number, or EIN, is a federal tax identification number issued by the IRS and used to identify a business for federal tax and other business purposes.",
       considerations: [
         "Your business structure.",
         "Whether the business has employees.",
-        "Banking and tax filing needs.",
+        "Banking and federal tax filing needs.",
         "Accuracy of the information submitted to the IRS.",
       ],
-      question: "Have questions about an EIN?",
+      question: "Need an EIN for your business? MRU can assist with the application process and next steps.",
     },
 
     "Business Dissolution": {
       title: "Business Dissolution",
       description:
-        "Business dissolution is the formal process of closing a business entity and addressing applicable state, tax, and administrative requirements.",
+        "Business dissolution is the formal process of closing a business entity and addressing applicable state, tax, registration and administrative requirements.",
       considerations: [
         "State dissolution or cancellation filings.",
         "Final federal and state tax filing requirements.",
         "Outstanding business obligations.",
         "Closing applicable business accounts and registrations.",
       ],
-      question: "Need help closing a business?",
+      question: "Need help closing a business? MRU can you through the dissolution process and applicable next steps.",
     },
   },
 
@@ -197,101 +198,101 @@ export default function BusinessFormationPage() {
     LLC: {
       title: "LLC",
       description:
-        "Una LLC, o Compañía de Responsabilidad Limitada, es una estructura empresarial común que combina flexibilidad administrativa con separación legal entre el negocio y sus propietarios.",
+        "Una LLC, o Compañía de Responsabilidad Limitada, es una estructura de negocio flexible que ofrece separación legal entre negocio y sus propietarios, además de flexibilidad en su administración y tratamiento contributivo.",
       considerations: [
         "Cantidad de propietarios o miembros.",
-        "Cómo deseas que el negocio sea administrado.",
-        "Requisitos de registro y cumplimiento.",
-        "Tratamiento contributivo aplicable.",
+        "Cómo será administrado el negocio.",
+        "Requisitos estatales de registro y cumplimiento continuo.",
+        "Tratamiento contributivo federal y estatal aplicable.",
       ],
-      question: "¿Tienes preguntas sobre una LLC?",
+      question: "¿Tienes preguntas sobre la formación de una LLC? MRU puede orientarte durante el proceso de formación y los próximos pasos.",
     },
 
-    "Elección S Corporation": {
+    "S Corporation": {
       title: "Elección S Corporation",
       description:
         "Una S Corporation es una elección contributiva federal disponible para ciertos negocios elegibles. No es una entidad separada que se crea de la misma manera que una LLC o corporación.",
       considerations: [
         "El negocio debe cumplir con los requisitos de elegibilidad del IRS.",
-        "La elección S Corporation afecta el tratamiento contributivo federal.",
+        "La elección afecta cómo se tratan los ingresos del negocio para propósitos contributivos federales.",
         "Pueden aplicar requisitos de nómina y compensación razonable.",
-        "Deben considerarse las fechas límite y el cumplimiento continuo.",
+        "Deben considerarse las fechas límite y los requisitos de cumplimiento continuo.",
       ],
-      question: "¿Tienes preguntas sobre la elección S Corporation?",
+      question: "¿Estás considerando una elección S Corporation?  MRU puede ayudarte a comprender los requisitos, el proceso y los próximos pasos.",
     },
 
     "C Corporation": {
       title: "C Corporation",
       description:
-        "Una C Corporation es una entidad legal separada cuyos propietarios son accionistas. Generalmente, la corporación presenta su propia declaración contributiva y paga impuestos a nivel corporativo.",
+        "Una C Corporation es una entidad legal separada cuyos propietarios son accionistas. Generalmente, la corporación presenta su propia declaración contributiva y está sujeta a tributación a nivel corporativo.",
       considerations: [
         "Propiedad mediante accionistas y acciones.",
-        "Requisitos corporativos y mantenimiento de registros.",
-        "Declaración contributiva separada de la corporación.",
-        "Objetivos de crecimiento y estructura de propiedad.",
+        "Requisitos de gobierno corporativo y mantenimiento de registros.",
+        "Requisitos de radicación contributiva de la corporación.",
+        "Objetivos del negocio, planes de crecimiento y estructura de propiedad.",
       ],
-      question: "¿Tienes preguntas sobre una C Corporation?",
+      question: "¿Estás considerando una C Corporation? MRU puede ayudarte a comprender los requisitos de formación y los próximos pasos",
     },
 
     Partnership: {
       title: "Sociedades",
       description:
-        "Una sociedad generalmente involucra a dos o más personas o entidades que operan un negocio en conjunto y comparten sus ganancias y pérdidas.",
+        "Una sociedad generalmente involucra a dos o más personas o entidades que operan un negocio en conjunto y comparten sus ganancias, pérdidas, responsabilidades y obligaciones contributivas.",
       considerations: [
-        "Porcentajes de propiedad y responsabilidades.",
+        "Porcentajes de participación y responsabilidades.",
         "Cómo se distribuirán las ganancias y pérdidas.",
         "Requisitos de declaración contributiva de la sociedad.",
-        "Un acuerdo claro entre los socios.",
+        "La importancia de tener un acuerdo claro entre los socios.",
       ],
-      question: "¿Tienes preguntas sobre una Sociedad?",
+      question: "¿Estás comenzando u organizando una sociedad? MRU puede orientarte sobre las consideraciones del negocio y contributivas, así como los proximos pasos.",
     },
 
     DBA: {
       title: "DBA",
       description:
-        "Un DBA, o Doing Business As, permite operar bajo un nombre diferente al nombre legal de la persona o empresa. Por sí solo, un DBA no crea una entidad legal separada.",
+        "Un DBA, o Doing Business As, permite que un negocio o individuo opere bajo un nombre diferente a su nombre legal. Por sí solo, un DBA no crea una entidad legal separada.",
       considerations: [
         "Disponibilidad del nombre comercial.",
         "Requisitos estatales o locales de registro.",
-        "La estructura legal que existe detrás del DBA.",
+        "La estructura legal que existente del negocio.",
         "Un DBA no sustituye una LLC o corporación.",
       ],
-      question: "¿Tienes preguntas sobre un DBA?",
+      question: "¿Necesitas ayuda con el registro de un DBA? MRU puede asistirte con el proceso de registro y los próximos pasos.",
     },
 
     EIN: {
       title: "EIN",
       description:
-        "El Employer Identification Number, o EIN, es un número de identificación contributiva federal emitido por el IRS para identificar un negocio para propósitos contributivos y comerciales.",
+        "El Employer Identification Number, o EIN, es un número de identificación contributiva federal emitido por el IRS y utilizado para identificar un negocio para propósitos contributivos federales y otras gestiones comerciales.",
       considerations: [
         "La estructura de tu negocio.",
-        "Si el negocio tendrá empleados.",
-        "Necesidades bancarias y contributivas.",
-        "Exactitud de la información presentada al IRS.",
+        "Si el negocio tiene empleados.",
+        "Necesidades bancarias y de radicación contributiva federal.",
+        "La precisión de la información presentada al IRS.",
       ],
-      question: "¿Tienes preguntas sobre un EIN?",
+      question: "¿Necesitas un EIN para tu negocio? MRU puede asistirte con el proceso de solicitud y los próximos pasos.",
     },
 
     "Business Dissolution": {
       title: "Disolución de Negocios",
       description:
-        "La disolución es el proceso formal de cerrar una entidad empresarial y atender los requisitos estatales, contributivos y administrativos que correspondan.",
+        "La disolución es el proceso formal de cerrar una entidad empresarial y atender los requisitos estatales, contributivos y administrativos aplicables.",
       considerations: [
-        "Documentos estatales de disolución o cancelación.",
-        "Declaraciones contributivas finales aplicables.",
+        "Radicaciones estatales de disolución o cancelación.",
+        "Requisitos finales de radicación federal y estatal.",
         "Obligaciones pendientes del negocio.",
         "Cierre de cuentas y registros comerciales aplicables.",
       ],
-      question: "¿Necesitas ayuda para cerrar un negocio?",
+      question: "¿Necesitas ayuda para cerrar un negocio? MRU puede orientarte durante el proceso de disolución y los próximos pasos aplicables.",
     },
   },
 };
 
   const content = {
     en: {
-      title: "Business Formation & Entity Services",
+      title: "Business Formation & Services",
       intro:
-        "Starting a business begins with understanding your options. Explore common business structures, registrations, and services available through MRU Professional Services.",
+        "Explore your business structure and registration options with clear guidance to help you make informed decisions from the start.",
       back: "Back to Home",
       eyebrow: "Explore your options",
       question: "What type of business are you considering?",
@@ -306,9 +307,9 @@ export default function BusinessFormationPage() {
     },
 
     es: {
-      title: "Formación y Estructura de Negocios",
+      title: "Formación y Servicios para Negocios",
       intro:
-        "Comenzar un negocio empieza por entender tus opciones. Conoce algunas de las estructuras, registros y servicios disponibles a través de MRU Professional Services.",
+        "Conoce tus opciones de estructura y registro de negocio con orientación clara para ayudarte a tomar decisiones informadas desde el comienzo.",
       back: "Volver al Inicio",
       eyebrow: "Explora tus opciones",
       question: "¿Qué tipo de negocio estás considerando?",
@@ -332,13 +333,25 @@ export default function BusinessFormationPage() {
       <section className="bg-slate-900 text-white">
         <div className="max-w-6xl mx-auto px-6 py-20 md:py-28">
           <div className="flex items-start justify-between gap-6">
-            <a href="/" className="inline-block">
+            <Link href="/" className="flex items-center gap-3">
               <img
-                src="/logo-mru-full-clean.png"
-                alt="MRU Professional Services"
-                className="w-64 md:w-80 h-auto object-contain"
+                src="/logo-mru-icon-clean.png"
+                alt="MRU"
+                className="h-16 w-auto"
               />
-            </a>
+
+              <div className="leading-tight">
+                <p className="text-sm font-semibold tracking-wide text-white">
+                    MRU Professional Services
+                </p>
+
+                <p className="mt-1 text-xs text-slate-300">
+                    {lang === "es"
+                      ? "Contabilidad · Impuestos · Negocio"
+                      : "Accounting · Tax · Business"}
+                </p>
+              </div>
+            </Link>
 
             <div className="flex items-center gap-2 text-sm font-semibold">
               <button
@@ -367,7 +380,7 @@ export default function BusinessFormationPage() {
             </div>
           </div>
 
-          <h1 className="mt-8 text-4xl md:text-6xl font-semibold">
+          <h1 className="mt-8 text-4xl md:text-5xl font-semibold">
             {t.title}
           </h1>
 
@@ -457,13 +470,6 @@ export default function BusinessFormationPage() {
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4">
     <div className="relative w-full max-w-2xl overflow-hidden rounded-3xl bg-white shadow-2xl">
 
-      <button
-        onClick={() => setSelectedBusiness(null)}
-        className="absolute right-5 top-4 text-2xl text-slate-500 hover:text-slate-900"
-        aria-label="Close"
-      >
-        ×
-      </button>
     <div className="flex items-center justify-between bg-slate-900 px-8 py-5">
       <img
         src="/logo-mru-full-clean.png"

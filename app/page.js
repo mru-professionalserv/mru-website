@@ -13,7 +13,7 @@ export default function MRULandingPage( ) {
       heroTitle:
         "Menos estrés. Más claridad.",
       heroDesc:
-        "Resultados en los que puedes confiar. Te acompaño en cada paso para preparar tus impuestos y organizar tu contabilidad con claridad, cumplimiento y confianza.",
+        "Soluciones contables, contributivas, y para negocios con la claridad y orientación que necesitas. Te acompaño en cada paso para que puedas avanzar con confianza.",
       cta1: "Habla conmigo",
       cta2: "Ver Servicios",
       features: [
@@ -30,7 +30,7 @@ export default function MRULandingPage( ) {
           desc: "Un servicio pensado para transmitir seriedad, orden y compromiso.",
         },
       ],
-      serviciosSubtitle: "Soluciones contables, contributivas y para negocios diseñadas para brindarte claridad, cumplimiento y confianza. Te acompaño en cada paso, desde tus impuestos hasta la estructura de tu negocio.",
+      serviciosSubtitle: "Servicios diseñados para acompañarte en diferentes etapas, desde tus impuestos y organización financiera hasta las necesidades de tu negocio.",
       services: [
         {
           title: "Servicios de Impuestos",
@@ -60,10 +60,10 @@ export default function MRULandingPage( ) {
       send: "Enviar mensaje",
 
       missionTitle: "Nuestra misión",
-      missionDesc: "Brindar servicios contables y contributivos con claridad, organización y profesionalismo, ayudando a individuos y pequeños negocios a cumplir con sus responsabilidades con tranquilidad y confianza.",
+      missionDesc: "Brindar servicios contables, contributivos y para negocios con claridad, organización y profesionalismo, ayudando a individuos y pequeños negocios a cumplir con sus responsabilidades y avanzar con mayor confianza.",
 
       visionTitle: "Nuestra visión",
-      visionDesc: "Ser un recurso de confianza para individuos y pequeños negocios, ofreciendo soluciones contables y contributivas claras, confiables y enfocadas en las necesidades de cada cliente.",
+      visionDesc: "Ser un recurso de confianza para individuos y pequeños negocios, ofreciendo soluciones contables, contributivas y empresariales claras, confiables y enfocadas en las necesidades de cada cliente.",
 
     },
     en: {
@@ -71,11 +71,11 @@ export default function MRULandingPage( ) {
       heroTitle:
         "Less stress. More clarity.",
       heroDesc: 
-        "Results you can trust. We guide you every step of the way to prepare your taxes and organize your accounting with clarity, compliance, and confidence.",
+        "Accounting, tax, and business solutions with the clarity and guidance you need. I support you every step of the way so you can move forward with confidence.",
       cta1: "Talk to me",
       cta2: "View Services",
       
-      serviciosSubtitle: "Accounting, tax, and business solutions designed to provide clarity, compliance and confidence. I guide you every step of the way, from your taxes to the orgabnization and structure of your business.",
+      serviciosSubtitle: "Services designed to support you at different stages, from taxes and financial organization to the needs of your business.",
       services: [
         {
           title: "Tax Services",
@@ -105,10 +105,10 @@ export default function MRULandingPage( ) {
       send: "Send Message",
 
       missionTitle: "Our Mission",
-      missionDesc: "To provide accounting and tax services with clarity, organization, and professionalism, helping individuals and small businesses meet their responsabilities with confidence and peace of mind.",
+      missionDesc: "To provide accounting, tax, and business services with clarity, organization, and professionalism, helping individuals and small businesses meet their responsabilities and move forward with greater confidence.",
 
       visionTitle: "Our Vision",
-      visionDesc: "To become a trusted resource for individuals and small businesses by offering reliable, accessible, and client-focused accounting and tax solutions.",
+      visionDesc: "To become a trusted resource for individuals and small businesses by offering clear, reliable, accessible, and client-focused accounting, tax, and business solutions.",
     
     },
   };
@@ -140,8 +140,8 @@ export default function MRULandingPage( ) {
               <p className="text-xs sm:text-sm font-semibold tracking-wide text-slate-900 leading-tight">
                 MRU Professional Services
               </p>
-              <p className="text-[11px] sm:text-xs text-slate-500 leading-tight">
-                {lang === "es" ? "Contabilidad · Impuestos · Negocios" : "AAccounting · Tax · Business"}
+              <p className="hidden sm:block text-xs text-slate-500 leading-tight">
+                {lang === "es" ? "Contabilidad · Impuestos · Negocios" : "Accounting · Tax · Business"}
               </p> 
             </div> 
           </div>
@@ -276,7 +276,7 @@ export default function MRULandingPage( ) {
       </a>
 
       <a
-        href="/servicios/irs-tax-support"
+        href="/services/irs-tax-support"
         onClick={() => setMobileServicesOpen(false)}
         className="block rounded-xl px-4 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50"
       >
@@ -299,7 +299,7 @@ export default function MRULandingPage( ) {
       </a>
 
       <a
-        href="/servicios/advisory-consulting"
+        href="/services/advisory-consulting"
         onClick={() => setMobileServicesOpen(false)}
         className="block rounded-xl px-4 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50"
       >
@@ -443,7 +443,7 @@ export default function MRULandingPage( ) {
         <p className="mb-4">
           {lang === "es"
             ? "Profesional en contabilidad y finanzas con experiencia en la industria bancaria, cumplimiento regulatorio, contabilidad y preparación contributiva. Acompaño a individuos y pequeños negocios con un enfoque claro, organizado y confiable, brindando orientación adaptada a sus necesidades financieras y contributivas."
-            : "Accounting and finance professional with experience in banking, regulatory compliance, accounting and tax preparation. I support individuals and small businesses with a clear, organized, and reliable approach, providing guidance tailored to their financial anf tax needs."}
+            : "Accounting and finance professional with experience in banking, regulatory compliance, accounting and tax preparation. I support individuals and small businesses with a clear, organized, and reliable approach, providing guidance tailored to their financial and tax needs."}
         </p>
 
         <p className="mt-4">
@@ -645,15 +645,9 @@ export default function MRULandingPage( ) {
 
         <p className="text-slate-700 text-lg font-medium">
           {lang === "es"
-            ? "Tu opinión es muy importante para nosotros. Comparte tu experiencia y ayúdanos a seguir mejorando."
-            : "Your feedback is very important to us. Share your experience and help us continue improving."}
+            ? "Tu opinión es muy importante para MRU. Comparte tu experiencia y ayúdanos a seguir mejorando."
+            : "Your feedback is very important to MRU. Share your experience and help us continue improving."}
         </p>
-
-        <p className="mt-2 text-slate-500">
-          {lang === "es"
-            ? "Puedes dejar tu reseña en el siguiente enlace:"
-            : "You can leave your review using the link below:"}
-          </p>
 
           <a
             href={lang === "es"
@@ -761,7 +755,7 @@ export default function MRULandingPage( ) {
        }
        target="_blank"
        rel="noopener noreferrer"
-       className="fixed bottom-6 right-6 sm:bottom-6 sm:right-6 z-50 flex items-center gap-2 rounded-full bg-green-600 px-4 py-2.5 sm:px-5 sm:py-3 text-sm sm:text-base text-white shadow-lg hover:bg-green-700 transition"
+       className="fixed bottom-2 right-2 sm:bottom-6 sm:right-6 z-50 flex items-center gap-2 rounded-full bg-green-600 p-2.5 sm:px-5 sm:py-3 text-sm sm:text-base text-white shadow-lg hover:bg-green-700 transition"
        style={{ boxShadow:  "0 8px 20px rgba(34,197,94,0.25)"  }}
     > 
 
