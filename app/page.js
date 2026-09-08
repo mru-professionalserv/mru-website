@@ -130,21 +130,31 @@ export default function MRULandingPage( ) {
     <div className="min-h-screen bg-slate-50 text-slate-900">
       <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center">
+            {/* Logo móvil */}
+            <img
+              src="/logo-mru-blue-full-clean.png"
+              alt="MRU"
+              className="h-16 w-auto md:hidden"
+            />
+
+            {/* Logo + nombre desktop */}
+            <div className="hidden md:flex items-center gap-3">
             <img
               src="/logo-mru-blue-icon.png"
               alt="MRU"
-              className="h-8 sm:h-10 w-auto"
+              className="h-10 w-auto"
             />
             <div>
-              <p className="text-xs sm:text-sm font-semibold tracking-wide text-slate-900 leading-tight">
+              <p className="text-sm sm:text-sm font-semibold tracking-wide text-slate-900 leading-tight">
                 MRU Professional Services
               </p>
-              <p className="hidden sm:block text-xs text-slate-500 leading-tight">
+              <p className="text-xs text-slate-500 leading-tight">
                 {lang === "es" ? "Contabilidad · Impuestos · Negocios" : "Accounting · Tax · Business"}
               </p> 
             </div> 
           </div>
+        </div>
 
           <nav className="hidden items-center gap-6 text-sm text-slate-700 md:flex">
             <div className="relative group">
@@ -431,7 +441,7 @@ export default function MRULandingPage( ) {
           BBA in Accounting · MBA in Finance · Business Analyst Certificate
         </p>
 
-        <div className="mt-3 inline-block px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs">
+        <div className="hidden md:block mt-3 inline-block px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs">
           {lang === "es" ? "Contabilidad & Finanzas" : "Accounting & Finance"}
         </div>
 
@@ -668,7 +678,7 @@ export default function MRULandingPage( ) {
   <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10 flex flex-col items-center gap-6 md:flex-row md:items-start md:justify-between md:gap-10">
 
     {/* IZQUIERDA: Logo + info */}
-    <div className="flex flex-col items-center text-center gap-3 md:items-start md:text-left">
+    <div className="flex flex-col items-center text-center gap- 1 md:items-start md:text-left">
       <img
         src="/logo-mru-blue-icon.png"
         alt="MRU Logo"
@@ -676,7 +686,7 @@ export default function MRULandingPage( ) {
       />
 
       <div className="text-sm text-slate-600 leading-relaxed max-w-xs mx-auto md:mx-0">
-        <p className="font-semibold text-slate-900">
+        <p className="hidden md:block font-semibold text-[#0f1b3d]">
           MRU Professional Services
         </p>
         <p>
