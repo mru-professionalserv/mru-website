@@ -424,11 +424,11 @@ export default function MRULandingPage( ) {
         </p>
 
         <p className="text-xl md:text-2xl font-semibold tracking-tight text-slate-900">
-          Melba Rodríguez
+          Melba Rodríguez Umpierre
         </p>
 
         <p className="text-xs text-slate-500 mt-1">
-          BBA in Accounting · MBA in Finance
+          BBA in Accounting · MBA in Finance · Business Analyst Certificate
         </p>
 
         <div className="mt-3 inline-block px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs">
