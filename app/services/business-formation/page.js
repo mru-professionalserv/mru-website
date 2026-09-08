@@ -309,7 +309,7 @@ export default function BusinessFormationPage() {
     es: {
       title: "Formación y Servicios para Negocios",
       intro:
-        "Conoce tus opciones de estructura y registro de negocio con orientación clara para ayudarte a tomar decisiones informadas desde el comienzo.",
+        "Conoce tus opciones de estructura y registro de negocio con orientación clara para ayudarte a elegir el camino adecuado desde el comienzo.",
       back: "Volver al Inicio",
       eyebrow: "Explora tus opciones",
       question: "¿Qué tipo de negocio estás considerando?",
