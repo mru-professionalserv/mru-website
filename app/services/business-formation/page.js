@@ -283,7 +283,7 @@ export default function BusinessFormationPage() {
         "Obligaciones pendientes del negocio.",
         "Cierre de cuentas y registros comerciales aplicables.",
       ],
-      question: "¿Necesitas ayuda para cerrar un negocio? MRU puede orientarte durante el proceso de disolución y los próximos pasos aplicables.",
+      question: "¿Necesitas ayuda para cerrar un negocio?",
     },
   },
 };
