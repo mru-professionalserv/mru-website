@@ -103,11 +103,11 @@ export default function IRSTaxSupportPage() {
       <header className="bg-slate-950 text-white">
         <div className="mx-auto max-w-6xl px-6 py-6">
           <div className="flex items-center justify-between gap-4">
-            <Link href="/" className="flex items-center gap-3">
+            <Link href="/" className="flex items-center gap-1">
               <img
                 src="/logo-mru-icon-clean.png"
                 alt="MRU"
-                className="h-16 w-auto"
+                className="h-20 w-auto"
               />
 
               <div className="leading-tight">

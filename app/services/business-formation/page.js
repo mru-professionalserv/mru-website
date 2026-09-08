@@ -74,7 +74,7 @@ export default function BusinessFormationPage() {
           "Una entidad legal separada con su propia estructura de propiedad, requisitos corporativos y consideraciones contributivas.",
       },
       {
-        title: "Partnership",
+        title: "Sociedad",
         subtitle: "Negocio con múltiples propietarios",
         description:
           "Una estructura de negocio con dos o más propietarios que conlleva consideraciones de participación, radicación y obligaciones contributivas.",
@@ -87,7 +87,7 @@ export default function BusinessFormationPage() {
       },
       {
         title: "EIN",
-        subtitle: "Employer Identification Number",
+        subtitle: "Número de Identificación del Empleador",
         description:
           "Obtén un número de identificación contributiva federal para tu negocio con orientación durante el proceso de solicitud.",
       },
@@ -112,7 +112,7 @@ export default function BusinessFormationPage() {
         "Registration and compliance requirements.",
         "Applicable tax treatment.",
       ],
-      question: "Have questions about an LLC? MRU can guide you throgh the formation process and next steps.",
+      question: "Have questions about an LLC?",
     },
 
     "S Corporation": {
@@ -125,7 +125,7 @@ export default function BusinessFormationPage() {
         "Payroll and reasonable compensation requirements may apply.",
         "Filing deadlines and ongoing compliance requirements should be considered.",
       ],
-      question: "Considering an S Corporation election? MRU can help you understand the requirements, process, and next steps",
+      question: "Considering an S Corporation election?",
     },
 
     "C Corporation": {
@@ -138,7 +138,7 @@ export default function BusinessFormationPage() {
         "Separate corporate tax filing requirements.",
         "Business goals, growth plans, and ownership structure.",
       ],
-      question: "Considering a C Corporation? MRU can help you understand the formation requirements and next steps.",
+      question: "Considering a C Corporation?",
     },
 
     Partnership: {
@@ -151,7 +151,7 @@ export default function BusinessFormationPage() {
         "Partnership tax filing requirements.",
         "The importance of a clear agreement between the partners.",
       ],
-      question: "Starting or organizing a Partnership? MRU can guide you through the business and tax considerations and next steps.",
+      question: "Starting or organizing a Partnership?",
     },
 
     DBA: {
@@ -164,7 +164,7 @@ export default function BusinessFormationPage() {
         "The underlying legal structure of the business.",
         "A DBA does not replace an LLC or corporation.",
       ],
-      question: "Need help with a DBA? MRU can assist with the registration process and next steps.",
+      question: "Need help with a DBA?",
     },
 
     EIN: {
@@ -177,7 +177,7 @@ export default function BusinessFormationPage() {
         "Banking and federal tax filing needs.",
         "Accuracy of the information submitted to the IRS.",
       ],
-      question: "Need an EIN for your business? MRU can assist with the application process and next steps.",
+      question: "Need an EIN for your business?",
     },
 
     "Business Dissolution": {
@@ -190,7 +190,7 @@ export default function BusinessFormationPage() {
         "Outstanding business obligations.",
         "Closing applicable business accounts and registrations.",
       ],
-      question: "Need help closing a business? MRU can you through the dissolution process and applicable next steps.",
+      question: "Need help closing a business?",
     },
   },
 
@@ -205,7 +205,7 @@ export default function BusinessFormationPage() {
         "Requisitos estatales de registro y cumplimiento continuo.",
         "Tratamiento contributivo federal y estatal aplicable.",
       ],
-      question: "¿Tienes preguntas sobre la formación de una LLC? MRU puede orientarte durante el proceso de formación y los próximos pasos.",
+      question: "¿Tienes preguntas sobre la formación de una LLC?",
     },
 
     "S Corporation": {
@@ -218,7 +218,7 @@ export default function BusinessFormationPage() {
         "Pueden aplicar requisitos de nómina y compensación razonable.",
         "Deben considerarse las fechas límite y los requisitos de cumplimiento continuo.",
       ],
-      question: "¿Estás considerando una elección S Corporation?  MRU puede ayudarte a comprender los requisitos, el proceso y los próximos pasos.",
+      question: "¿Estás considerando una elección S Corporation?",
     },
 
     "C Corporation": {
@@ -231,11 +231,11 @@ export default function BusinessFormationPage() {
         "Requisitos de radicación contributiva de la corporación.",
         "Objetivos del negocio, planes de crecimiento y estructura de propiedad.",
       ],
-      question: "¿Estás considerando una C Corporation? MRU puede ayudarte a comprender los requisitos de formación y los próximos pasos",
+      question: "¿Estás considerando una C Corporation?",
     },
 
-    Partnership: {
-      title: "Sociedades",
+    Sociedad: {
+      title: "Sociedad",
       description:
         "Una sociedad generalmente involucra a dos o más personas o entidades que operan un negocio en conjunto y comparten sus ganancias, pérdidas, responsabilidades y obligaciones contributivas.",
       considerations: [
@@ -244,7 +244,7 @@ export default function BusinessFormationPage() {
         "Requisitos de declaración contributiva de la sociedad.",
         "La importancia de tener un acuerdo claro entre los socios.",
       ],
-      question: "¿Estás comenzando u organizando una sociedad? MRU puede orientarte sobre las consideraciones del negocio y contributivas, así como los proximos pasos.",
+      question: "¿Estás comenzando u organizando una sociedad?",
     },
 
     DBA: {
@@ -257,7 +257,7 @@ export default function BusinessFormationPage() {
         "La estructura legal que existente del negocio.",
         "Un DBA no sustituye una LLC o corporación.",
       ],
-      question: "¿Necesitas ayuda con el registro de un DBA? MRU puede asistirte con el proceso de registro y los próximos pasos.",
+      question: "¿Necesitas ayuda con el registro de un DBA?",
     },
 
     EIN: {
@@ -270,7 +270,7 @@ export default function BusinessFormationPage() {
         "Necesidades bancarias y de radicación contributiva federal.",
         "La precisión de la información presentada al IRS.",
       ],
-      question: "¿Necesitas un EIN para tu negocio? MRU puede asistirte con el proceso de solicitud y los próximos pasos.",
+      question: "¿Necesitas un EIN para tu negocio?",
     },
 
     "Business Dissolution": {
@@ -333,11 +333,11 @@ export default function BusinessFormationPage() {
       <section className="bg-slate-900 text-white">
         <div className="max-w-6xl mx-auto px-6 py-20 md:py-28">
           <div className="flex items-start justify-between gap-6">
-            <Link href="/" className="flex items-center gap-3">
+            <Link href="/" className="flex items-center gap-1">
               <img
                 src="/logo-mru-icon-clean.png"
                 alt="MRU"
-                className="h-16 w-auto"
+                className="h-20 w-auto"
               />
 
               <div className="leading-tight">
@@ -468,14 +468,20 @@ export default function BusinessFormationPage() {
       </section>
       {selectedBusiness && businessDetails[lang][selectedBusiness] && (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4">
-    <div className="relative w-full max-w-2xl overflow-hidden rounded-3xl bg-white shadow-2xl">
+    <div className="relative w-full max-w-2xl max-h-[calc(100vh-2rem)] overflow-y-auto rounded-3xl bg-white shadow-2xl">
 
-    <div className="flex items-center justify-between bg-slate-900 px-8 py-5">
-      <img
-        src="/logo-mru-full-clean.png"
-        alt="MRU Professional Services"
-        className="w-56 md:w-64 h-auto object-contain"
+    <div className="sticky top-0 z-10 flex items-center justify-between bg-slate-900 px-4 py-2 sm:px-8 sm:py-5">
+      <div className="flex items-center gap-0">
+        <img
+          src="/logo-mru-icon-clean.png"
+        alt="MRU"
+        className="h-12 w-auto sm:h-14 object-contain"
       />
+
+      <span className="-ml-2 text-[9px] font-medium tracking-[0.22em] text-white sm:text-[10px]">
+        Professional Services 
+      </span>
+      </div>
 
       <button
         onClick={() => setSelectedBusiness(null)}
