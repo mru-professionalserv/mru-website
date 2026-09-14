@@ -133,7 +133,7 @@ export default function MRULandingPage( ) {
           <div className="flex items-center">
             {/* Logo móvil */}
             <img
-              src="/logo-mru-blue-full-clean.png"
+              src="/logo-mru-blue-icon-clean.png"
               alt="MRU"
               className="h-16 w-auto md:hidden"
             />
@@ -146,9 +146,7 @@ export default function MRULandingPage( ) {
               className="h-10 w-auto"
             />
             <div>
-              <p className="text-sm sm:text-sm font-semibold tracking-wide text-slate-900 leading-tight">
-                MRU Professional Services
-              </p>
+              
               <p className="text-xs text-slate-500 leading-tight">
                 {lang === "es" ? "Contabilidad · Impuestos · Negocios" : "Accounting · Tax · Business"}
               </p> 
@@ -364,14 +362,10 @@ export default function MRULandingPage( ) {
             <img
               src="/logo-mru-icon-clean.png"
               alt="MRU Professional Services"
-              className="h-20 sm:h-24 md:h-32 w-auto -mb-10"
+              className="h-20 sm:h-24 md:h-32 w-auto mb-8 md:mb-10"
               style={{ filter: "drop-shadow(0 0 6px rgba(255,255,255,0.15))" }}
            />
          </div>
-
-         <p className="text-center text-white/75 text-[11px] sm:text-xs font-semibold tracking-[0.30em] uppercase mb-22">
-           Professional Services
-         </p>
 
          <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-center leading-tight px-4 pb-12">
           {content.heroTitle}
@@ -437,12 +431,9 @@ export default function MRULandingPage( ) {
           Melba Rodríguez Umpierre
         </p>
 
-        <p className="text-xs text-slate-500 mt-1">
-          BBA in Accounting · MBA in Finance · Business Analyst Certificate
-        </p>
-
-        <div className="hidden md:block mt-3 inline-block px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs">
-          {lang === "es" ? "Contabilidad & Finanzas" : "Accounting & Finance"}
+        <div className="text-xs text-slate-500 mt-1">
+          <p>BBA in Accounting · MBA in Finance</p>
+          <p className="mt-1">Business Analyst Certificate</p>
         </div>
 
       </div>
@@ -458,8 +449,8 @@ export default function MRULandingPage( ) {
 
         <p className="mt-4">
           {lang === "es"
-            ? "MRU Professional Services nació con el propósito de ofrecer un servicio profesional, cercano y personalizado, donde cada cliente puede recibir orientación clara y contar con el apoyo necesario al tomar decisiones importantes para sus finanzas o su negocio."
-            : "MRU Professional Services  was founded to provide professional, approachable, and personalized service, where every client can receive clear guidance and the support they need when making important financial or business decisions."}
+            ? "MRU nació con el propósito de ofrecer un servicio profesional, cercano y personalizado, donde cada cliente puede recibir orientación clara y contar con el apoyo necesario al tomar decisiones importantes para sus finanzas o su negocio."
+            : "MRU was founded to provide professional, approachable, and personalized service, where every client can receive clear guidance and the support they need when making important financial or business decisions."}
         </p>
 
       </div>
@@ -687,7 +678,7 @@ export default function MRULandingPage( ) {
 
       <div className="text-sm text-slate-600 leading-relaxed max-w-xs mx-auto md:mx-0">
         <p className="hidden md:block font-semibold text-[#0f1b3d]">
-          MRU Professional Services
+          Accounting · Tax · Business
         </p>
         <p>
           {lang === "es"
@@ -712,7 +703,7 @@ export default function MRULandingPage( ) {
   
       {/* Instagram*/}
       <a
-        href="https://www.instagram.com/mru.professionalservices"
+        href="https://www.instagram.com/mru.accounting"
         target="_blank"
         rel="noopener noreferrer"
         className="w-full max-w-xs mx-auto sm:w-auto flex items-center justify-center gap-2 px-5 py-2.5 border border-slate-300 rounded-xl bg-white text-slate-700 hover:bg-slate-100 hover:border-slate-900 hover:text-slate-900 shadow-sm hover:shadow-md transition-all duration-200"
@@ -730,7 +721,7 @@ export default function MRULandingPage( ) {
 
       {/* Facebook */}      
       <a
-        href="https://www.facebook.com/MRUprofessionalservices"
+        href="https://www.facebook.com/MRUaccounting"
         target="_blank"
         rel="noopener noreferrer"
         className="w-full max-w-xs mx-auto sm:w-auto flex items-center justify-center gap-2 px-5 py-2.5 border border-slate-300 rounded-xl bg-white text-slate-700 hover:bg-slate-100 hover:border-slate-900 hover:text-slate-900 shadow-sm hover:shadow-md transition-all duration-200"
@@ -752,8 +743,8 @@ export default function MRULandingPage( ) {
   {/* Copyright */}
   <p className="mt-8 text-xs text-slate-400 text-center pb-6 tracking-wide">
     {lang === "es"
-      ? `© ${new Date().getFullYear()} MRU Professional Services. Todos los derechos reservados.`
-      : `© ${new Date().getFullYear()} MRU Professional Services. All rights reserved.`}
+      ? `© ${new Date().getFullYear()} MRU. Todos los derechos reservados.`
+      : `© ${new Date().getFullYear()} MRU. All rights reserved.`}
   </p>
 </footer>
     

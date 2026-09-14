@@ -302,7 +302,7 @@ export default function BusinessFormationPage() {
       haveQuestions: "Have questions?",
       ctaTitle: "Not sure which option applies to your business?",
       ctaText:
-        "Tell us a little about your business and the type of assistance you are looking for. MRU Professional Services can help you understand the next steps.",
+        "Tell us a little about your business and the type of assistance you are looking for. MRU can help you understand the next steps.",
       contact: "Contact MRU",
     },
 
@@ -319,7 +319,7 @@ export default function BusinessFormationPage() {
       haveQuestions: "¿Tienes preguntas?",
       ctaTitle: "¿No estás segura de cuál opción aplica a tu negocio?",
       ctaText:
-        "Cuéntanos un poco sobre tu negocio y el tipo de asistencia que estás buscando. MRU Professional Services puede ayudarte a entender los próximos pasos.",
+        "Cuéntanos un poco sobre tu negocio y el tipo de asistencia que estás buscando. MRU puede ayudarte a entender los próximos pasos.",
       contact: "Contactar a MRU",
     },
   };
@@ -341,10 +341,6 @@ export default function BusinessFormationPage() {
               />
 
               <div className="leading-tight">
-                <p className="text-sm font-semibold tracking-wide text-white">
-                    MRU Professional Services
-                </p>
-
                 <p className="mt-1 text-xs text-slate-300">
                     {lang === "es"
                       ? "Contabilidad · Impuestos · Negocio"
@@ -477,10 +473,6 @@ export default function BusinessFormationPage() {
         alt="MRU"
         className="h-12 w-auto sm:h-14 object-contain"
       />
-
-      <span className="-ml-2 text-[9px] font-medium tracking-[0.22em] text-white sm:text-[10px]">
-        Professional Services 
-      </span>
       </div>
 
       <button
