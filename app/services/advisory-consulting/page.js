@@ -47,7 +47,7 @@ export default function AdvisoryConsultingPage() {
 
       ctaTitle: "Have a question or important decision to make?",
       ctaText:
-        "MRU Professional Services provides personalized consultations to help you understand your options, address your questions, and determine the next steps with greater clarity.",
+        "MRU provides personalized consultations to help you understand your options, address your questions, and determine the next steps with greater clarity.",
 
       ctaButton: "Schedule a Consultation",
       back: "Back to Home",
@@ -93,7 +93,7 @@ export default function AdvisoryConsultingPage() {
 
       ctaTitle: "¿Tienes una pregunta o una decisión importante que tomar?",
       ctaText:
-        "MRU Professional Services ofrece consultas personalizadas para ayudarte a comprender tus opciones, atender tus preguntas y determinar los próximos pasos con mayor claridad.",
+        "MRU ofrece consultas personalizadas para ayudarte a comprender tus opciones, atender tus preguntas y determinar los próximos pasos con mayor claridad.",
 
       ctaButton: "Solicitar una Consulta",
       back: "Volver al Inicio",
@@ -209,6 +209,11 @@ export default function AdvisoryConsultingPage() {
           </div>
         </div>
       </section>
+
+      <footer className="border-t border-slate-200 py-8 text-center text-sm text-slate-500">
+        &copy; 2026 MRU. {lang === "es" ? "Todos los derechos reservados." : "All rights reserved."}
+      </footer>
+      
     </main>
   );
 }

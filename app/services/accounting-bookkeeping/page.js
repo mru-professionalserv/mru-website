@@ -42,7 +42,7 @@ export default function AccountingBookkeepingPage() {
 
       ctaTitle: "Ready to get your books organized?",
       ctaText:
-        "MRU Professional Services provides personalized accounting support designed to bring greater clarity and organization to your business finances.",
+        "MRU provides personalized accounting support designed to bring greater clarity and organization to your business finances.",
       ctaButton: "Contact MRU",
       back: "Back to Home",
     },
@@ -82,7 +82,7 @@ export default function AccountingBookkeepingPage() {
 
       ctaTitle: "¿Listo para organizar la contabilidad de tu negocio?",
       ctaText:
-        "MRU Professional Services ofrece apoyo contable personalizado para brindarte mayor claridad y organización en las finanzas de tu negocio.",
+        "MRU ofrece apoyo contable personalizado para brindarte mayor claridad y organización en las finanzas de tu negocio.",
       ctaButton: "Contactar a MRU",
       back: "Volver al Inicio",
     },
@@ -188,6 +188,11 @@ export default function AccountingBookkeepingPage() {
           </div>
         </div>
       </section>
+
+      <footer className="border-t border-slate-200 py-8 text-center text-sm text-slate-500">
+        &copy; 2026 MRU. {lang === "es" ? "Todos los derechos reservados." : "All rights reserved."}
+      </footer>
+
     </main>
   );
 }

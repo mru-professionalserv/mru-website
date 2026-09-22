@@ -11,7 +11,7 @@ export default function TaxServicesPage() {
       label: "TAX SERVICES",
       title: "Tax Services",
       intro:
-        "Professional tax preparation and filing support for individuals, self-employed professionals, and businesses.",
+        "Professional tax preparation and filing support for individuals, self-employed taxpayers, and businesses.",
 
       services: [
         {
@@ -28,7 +28,7 @@ export default function TaxServicesPage() {
         },
         {
           title: "Tax Amendments",
-          desc: "Preparation of amended tax returns when income, deductions, credits, filing status, or other information needs to be corrected.",
+          desc: "Preparation of amended tax returns to correct or update income, deductions, credits, filing status, or other previously reported information.",
         },
         {
           title: "Federal & State Filings",
@@ -36,13 +36,14 @@ export default function TaxServicesPage() {
         },
         {
           title: "Puerto Rico Tax Services",
+          comingSoon: "Coming Soon",
           desc: "Preparation and filing of applicable Puerto Rico individual and business tax returns.",
         },
       ],
 
       ctaTitle: "Need help with your taxes?",
       ctaText:
-        "MRU Professional Services provides personalized guidance to help you understand your filing responsibilities and move forward with confidence.",
+        "MRU provides personalized guidance to help you understand your filing responsibilities and move forward with confidence.",
       ctaButton: "Contact MRU",
       back: "Back to Home",
     },
@@ -51,7 +52,7 @@ export default function TaxServicesPage() {
       label: "SERVICIOS DE IMPUESTOS",
       title: "Servicios de Impuestos",
       intro:
-        "Preparación y radicación de impuestos para individuos, trabajadores por cuenta propia y negocios.",
+        "Preparación de impuestos y apoyo en la radicación para individuos, trabajadores por cuenta propia y negocios.",
 
       services: [
         {
@@ -68,7 +69,7 @@ export default function TaxServicesPage() {
         },
         {
           title: "Enmiendas Contributivas",
-          desc: "Preparación de declaraciones enmendadas cuando es necesario corregir ingresos, deducciones, créditos, estado civil contributivo u otra información.",
+          desc: "Preparación de declaraciones enmendadas para corregir o actualizar ingresos, deducciones, créditos, estado civil contributivo u otra información previamente reportada.",
         },
         {
           title: "Radicaciones Federales y Estatales",
@@ -77,12 +78,13 @@ export default function TaxServicesPage() {
         {
           title: "Servicios Contributivos de Puerto Rico",
           desc: "Preparación y radicación de planillas aplicables para individuos y negocios en Puerto Rico.",
+          comingSoon: "Próximamente",
         },
       ],
 
       ctaTitle: "¿Necesitas ayuda con tus impuestos?",
       ctaText:
-        "MRU Professional Services ofrece orientación personalizada para ayudarte a comprender tus responsabilidades contributivas y avanzar con mayor claridad.",
+        "MRU ofrece orientación personalizada para ayudarte a comprender tus responsabilidades contributivas y avanzar con mayor claridad.",
       ctaButton: "Contactar a MRU",
       back: "Volver al Inicio",
     },
@@ -162,6 +164,12 @@ export default function TaxServicesPage() {
                 {service.title}
               </h2>
 
+          {service.comingSoon && (
+            <span className="mt-2 inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-600">
+              {service.comingSoon}
+            </span>
+          )}
+
               <p className="mt-3 leading-7 text-slate-600">
                 {service.desc}
               </p>
@@ -193,6 +201,11 @@ export default function TaxServicesPage() {
           </div>
         </div>
       </section>
+
+      <footer className="border-t border-slate-200 py-8 text-center text-sm text-slate-500">
+        &copy; 2026 MRU. {lang === "es" ? "Todos los derechos reservados." : "All rights reserved."}
+      </footer>
+      
     </main>
   );
 }

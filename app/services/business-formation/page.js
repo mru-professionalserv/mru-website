@@ -330,7 +330,7 @@ export default function BusinessFormationPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* HERO */}
-      <section className="bg-slate-900 text-white">
+      <section className="relative z-30 bg-slate-900 text-white">
         <div className="max-w-6xl mx-auto px-6 py-20 md:py-28">
           <div className="flex items-start justify-between gap-6">
             <Link href="/" className="flex items-center gap-1">
@@ -409,8 +409,14 @@ export default function BusinessFormationPage() {
       </section>
 
       {/* BUSINESS TYPES */}
-      <section className="bg-slate-50 py-16">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <section className="relative overflow-hidden bg-slate-50 py-16">
+        <img
+          src="/logo-mru-blue-icon-clean.png"
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none fixed z-0 left-1/2 top-1/2 w-[400px] max-w-[70%] -translate-x-1/2 -translate-y-1/2 opacity-[0.35]"
+        />
+        <div className="relative z-10 max-w-6xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {currentBusinessTypes.map((business) => (
             <div
               key={business.title}
@@ -441,7 +447,7 @@ export default function BusinessFormationPage() {
 
       {/* CTA */}
       <section className="max-w-6xl mx-auto px-6 py-20">
-        <div className="rounded-3xl bg-slate-900 px-8 py-12 md:px-12 text-white">
+        <div className="relative z-30 rounded-3xl bg-slate-900 px-8 py-12 md:px-12 text-white">
           <p className="text-sm uppercase tracking-widest text-slate-300">
             {t.haveQuestions}
           </p>
@@ -536,6 +542,11 @@ export default function BusinessFormationPage() {
   </div>
   </div>
 )}
+
+    <footer className="border-t border-slate-200 py-8 text-center text-sm text-slate-500">
+        &copy; 2026 MRU. {lang === "es" ? "Todos los derechos reservados." : "All rights reserved."}
+      </footer>
+
     </main>
   );
 }

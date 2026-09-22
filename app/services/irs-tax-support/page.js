@@ -46,7 +46,7 @@ export default function IRSTaxSupportPage() {
 
       ctaTitle: "Received a notice or need tax support?",
       ctaText:
-        "MRU Professional Services can help you understand your situation, organize the necessary information, and determine the next steps.",
+        "MRU can help you understand your situation, organize the necessary information, and determine the next steps.",
       ctaButton: "Contact MRU",
       back: "Back to Home",
     },
@@ -90,7 +90,7 @@ export default function IRSTaxSupportPage() {
 
       ctaTitle: "¿Recibiste un aviso o necesitas apoyo contributivo?",
       ctaText:
-        "MRU Professional Services puede ayudarte a comprender tu situación, organizar la información necesaria y determinar los próximos pasos.",
+        "MRU puede ayudarte a comprender tu situación, organizar la información necesaria y determinar los próximos pasos.",
       ctaButton: "Contactar a MRU",
       back: "Volver al Inicio",
     },
@@ -209,6 +209,11 @@ export default function IRSTaxSupportPage() {
           </div>
         </div>
       </section>
+
+      <footer className="border-t border-slate-200 py-8 text-center text-sm text-slate-500">
+        &copy; 2026 MRU. {lang === "es" ? "Todos los derechos reservados." : "All rights reserved."}
+      </footer>
+      
     </main>
   );
 }
