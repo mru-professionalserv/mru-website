@@ -5,7 +5,10 @@ export const metadata: Metadata = {
   title: "MRU | Accounting · Tax · Business",
   description: 
     "Accounting, tax, and business services for individuals, self-employed professionals, and small-businesses in the U.S. and Puerto Rico.",
-};
+  icons: {
+     icon: "/mru-icon.png",
+   },
+  };
 
 export default function RootLayout({
   children,

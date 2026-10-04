@@ -6,6 +6,254 @@ export default function MRULandingPage( ) {
   const [lang, setLang] = useState("es");
 
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const searchItems = [
+  {
+    title: "Servicios",
+    titleEn: "Services",
+    href: "#servicios",
+    keywords: [
+      "servicios",
+      "servicio",
+      "servicios disponibles",
+      "qué servicios ofrecen",
+      "que servicios ofrecen",
+      "qué ofrecen",
+      "que ofrecen",
+      "cómo me pueden ayudar",
+      "como me pueden ayudar",
+      "services",
+      "available services",
+      "what services do you offer",
+      "what do you offer",
+      "how can you help",
+    ],
+  },
+
+  {
+    title: "Contabilidad y Bookkeeping",
+    titleEn: "Accounting & Bookkeeping",
+    href: "/services/accounting-bookkeeping",
+    keywords: [
+      "contabilidad",
+      "contable",
+      "ayuda contable",
+      "servicios contables",
+      "bookkeeping",
+      "accounting",
+      "accountant",
+      "libros",
+      "llevar los libros",
+      "llevar mis libros",
+      "llevar las cuentas",
+      "cuentas del negocio",
+      "registros",
+      "registros contables",
+      "gastos",
+      "ingresos",
+      "reconciliación",
+      "reconciliacion",
+      "reconciliaciones",
+      "estados financieros",
+      "organizar finanzas",
+      "organizar mis finanzas",
+      "organizar las finanzas",
+      "organización financiera",
+      "organizacion financiera",
+      "organizar mi negocio",
+      "quickbooks",
+      "financial records",
+      "financial statements",
+      "reconciliation",
+      "business finances",
+      "organize finances",
+      "organize my finances",
+      "keep my books",
+      "business records",
+    ],
+  },
+
+  {
+    title: "Preparación de Impuestos",
+    titleEn: "Tax Services",
+    href: "/services/tax-services",
+    keywords: [
+      "impuestos",
+      "tax",
+      "taxes",
+      "planilla",
+      "planillas",
+      "declaración",
+      "declaracion",
+      "declaración de impuestos",
+      "declaracion de impuestos",
+      "preparar impuestos",
+      "hacer impuestos",
+      "hacer taxes",
+      "preparar planilla",
+      "radicar planilla",
+      "tax return",
+      "tax preparation",
+      "prepare taxes",
+      "file taxes",
+      "file my taxes",
+      "individual taxes",
+      "business taxes",
+      "self employed taxes",
+      "self-employed taxes",
+      "trabajo por cuenta propia",
+      "impuestos negocio",
+      "impuestos personales",
+      "enmendar planilla",
+      "corregir planilla",
+      "enmienda",
+      "amendment",
+      "amended return",
+    ],
+  },
+
+  {
+    title: "Formación de Negocios",
+    titleEn: "Business Formation",
+    href: "/services/business-formation",
+    keywords: [
+      "negocio",
+      "crear negocio",
+      "crear un negocio",
+      "abrir negocio",
+      "abrir un negocio",
+      "comenzar negocio",
+      "comenzar un negocio",
+      "empezar negocio",
+      "empezar un negocio",
+      "nuevo negocio",
+      "empresa",
+      "crear empresa",
+      "abrir empresa",
+      "formar empresa",
+      "formación de negocio",
+      "formacion de negocio",
+      "estructura de negocio",
+      "tipo de negocio",
+      "qué tipo de negocio",
+      "que tipo de negocio",
+      "llc",
+      "corporación",
+      "corporacion",
+      "corporation",
+      "s corp",
+      "s corporation",
+      "c corp",
+      "c corporation",
+      "partnership",
+      "sociedad",
+      "dba",
+      "ein",
+      "business",
+      "new business",
+      "start business",
+      "start a business",
+      "open a business",
+      "create a business",
+      "business formation",
+      "business structure",
+      "business entity",
+      "form an llc",
+      "open an llc",
+      "start an llc",
+    ],
+  },
+
+  {
+    title: "Soporte con el IRS",
+    titleEn: "IRS Tax Support",
+    href: "/services/irs-tax-support",
+    keywords: [
+      "irs",
+      "carta del irs",
+      "carta de irs",
+      "recibí carta del irs",
+      "recibi carta del irs",
+      "aviso del irs",
+      "notificación del irs",
+      "notificacion del irs",
+      "problema con irs",
+      "problema con el irs",
+      "deuda con irs",
+      "deuda con el irs",
+      "deuda de impuestos",
+      "impuestos atrasados",
+      "pago al irs",
+      "plan de pago irs",
+      "irs letter",
+      "irs notice",
+      "irs problem",
+      "irs help",
+      "irs debt",
+      "tax debt",
+      "back taxes",
+      "payment plan",
+      "irs payment plan",
+    ],
+  },
+
+  {
+    title: "Asesoría y Consultoría",
+    titleEn: "Advisory & Consulting",
+    href: "/services/advisory-consulting",
+    keywords: [
+      "asesoría",
+      "asesoria",
+      "consultoría",
+      "consultoria",
+      "orientación",
+      "orientacion",
+      "asesoría de negocio",
+      "asesoria de negocio",
+      "orientación de negocio",
+      "orientacion de negocio",
+      "planificación",
+      "planificacion",
+      "estrategia",
+      "decisiones de negocio",
+      "mejorar mi negocio",
+      "advisory",
+      "consulting",
+      "business advisory",
+      "business consulting",
+      "business guidance",
+      "business strategy",
+      "planning",
+      "business planning",
+    ],
+  },
+];
+
+  const normalizeText = (text) =>
+  text
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim();
+
+const searchResults = searchQuery.trim()
+  ? searchItems.filter((item) => {
+      const query = normalizeText(searchQuery);
+
+      const searchableText = normalizeText(
+        [
+          item.title,
+          item.titleEn,
+          ...item.keywords,
+        ].join(" ")
+      );
+
+      return searchableText.includes(query);
+    })
+  : [];
 
   const t = {
     es: {
@@ -247,10 +495,33 @@ export default function MRULandingPage( ) {
             <a href="#contacto" className="hover:text-slate-900">
               {lang === "es" ? "Contacto" : "Contact"}
             </a>
+
+            <button
+               type="button"
+               onClick={() => setSearchOpen(true)}
+               aria-label={lang === "es" ? "Buscar" : "Search"}
+               className="hover:text-slate-900 transition-colors"
+            >
+            <span className="text-lg">⌕</span>
+          </button>
           </nav> 
 
-          <div className="relative md:hidden">
+          <div className="relative md:hidden flex items-center gap-1">
+
   <button
+    type="button"
+    onClick={() => {
+      setMobileServicesOpen(false);
+      setSearchOpen(true);
+    }}
+    className="flex items-center justify-center rounded-xl px-2 py-2 text-slate-700 hover:bg-slate-50"
+    aria-label={lang === "es" ? "Buscar" : "Search"}
+  >
+    <span className="text-lg">⌕</span>
+  </button>
+
+  <button
+    type="button"
     onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
     className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50"
   >
@@ -341,6 +612,22 @@ export default function MRULandingPage( ) {
       >
         {lang === "es" ? "Contacto" : "Contact"}
       </a>
+
+      <div className="my-3 border-t border-slate-200" />
+
+<button
+  type="button"
+  onClick={() => {
+    setMobileServicesOpen(false);
+    setSearchOpen(true);
+  }}
+  className="flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left text-sm font-semibold text-slate-700 hover:bg-slate-50"
+  aria-label={lang === "es" ? "Buscar" : "Search"}
+>
+  <span className="text-lg">⌕</span>
+  <span>{lang === "es" ? "Buscar" : "Search"}</span>
+</button>
+
     </div>
   )}
 </div>
@@ -355,6 +642,71 @@ export default function MRULandingPage( ) {
           </div>
         </div>
       </header>
+
+       {searchOpen && (
+  <div className="bg-white border-t border-slate-100 shadow-md">
+    <div className="mx-auto max-w-3xl px-6 py-5">
+
+      <div className="flex items-center gap-3">
+        <span className="text-slate-400">⌕</span>
+
+        <input
+          type="text"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          placeholder={
+            lang === "es"
+              ? "¿Qué servicio estás buscando?"
+              : "What service are you looking for?"
+          }
+          autoFocus
+          className="w-full bg-transparent text-slate-900 outline-none placeholder:text-slate-400"
+        />
+
+        <button
+          type="button"
+          onClick={() => {
+            setSearchOpen(false);
+            setSearchQuery("");
+          }}
+          className="text-slate-400 hover:text-slate-900 text-xl"
+          aria-label={lang === "es" ? "Cerrar búsqueda" : "Close search"}
+        >
+          ×
+        </button>
+      </div>
+
+      {searchQuery.trim() && (
+        <div className="mt-4 border-t border-slate-100 pt-3">
+          {searchResults.length > 0 ? (
+            <div className="space-y-1">
+              {searchResults.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => {
+                    setSearchOpen(false);
+                    setSearchQuery("");
+                  }}
+                  className="block rounded-lg px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 hover:text-slate-900"
+                >
+                  {lang === "es" ? item.title : item.titleEn}
+                </a>
+              ))}
+            </div>
+          ) : (
+            <p className="px-4 py-3 text-sm text-slate-400">
+              {lang === "es"
+                ? "No encontramos un servicio relacionado."
+                : "We couldn't find a related service."}
+            </p>
+          )}
+        </div>
+      )}
+
+    </div>
+  </div>
+)}
 
       <section className="relative overflow-hidden bg-slate-900 text-white py-24 md:py-32 pb-24">
         <div className="mx-auto max-w-6xl px-6 text-center">
